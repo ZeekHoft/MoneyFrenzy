@@ -1,7 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://d87r4mywukd7"]
+[gd_scene load_steps=27 format=3 uid="uid://d87r4mywukd7"]
 
 [ext_resource type="Script" path="res://scripts/business_man.gd" id="1_cm7y0"]
 [ext_resource type="Texture2D" uid="uid://b72hwi366h8aq" path="res://images/business_man.png" id="1_lw8bc"]
+[ext_resource type="Texture2D" uid="uid://bgxtjkayof65g" path="res://images/Shadow.png" id="2_mifeh"]
+[ext_resource type="PackedScene" uid="uid://dv7x0ioycxvah" path="res://scenes/money.tscn" id="4_q8pei"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1u72x"]
 atlas = ExtResource("1_lw8bc")
@@ -163,6 +165,11 @@ height = 106.0
 [node name="businessMan" type="CharacterBody2D"]
 script = ExtResource("1_cm7y0")
 
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(17.25, -12.25)
+scale = Vector2(7.60938, 3.57813)
+texture = ExtResource("2_mifeh")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(6, -73)
 scale = Vector2(6, 6)
@@ -174,3 +181,8 @@ frame_progress = 0.995099
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, -53)
 shape = SubResource("CapsuleShape2D_87ulo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Money" parent="." instance=ExtResource("4_q8pei")]
+position = Vector2(27, -27)

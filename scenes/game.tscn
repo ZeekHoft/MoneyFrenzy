@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://5oh61jih13wc"]
+[gd_scene load_steps=4 format=3 uid="uid://5oh61jih13wc"]
 
 [ext_resource type="PackedScene" uid="uid://28foeieqplhj" path="res://scenes/tree.tscn" id="2_biit0"]
 [ext_resource type="PackedScene" uid="uid://d87r4mywukd7" path="res://scenes/business_man.tscn" id="2_f6q2v"]
+[ext_resource type="PackedScene" uid="uid://beoqdp18yive5" path="res://scenes/mob.tscn" id="3_usmag"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.8876, 16.2181)
+color = Color(0.442869, 0.453096, 0.45447, 1)
 
 [node name="Tree" parent="." instance=ExtResource("2_biit0")]
 position = Vector2(341, 201)
@@ -23,3 +33,15 @@ position = Vector2(438, 463)
 
 [node name="businessMan" parent="." instance=ExtResource("2_f6q2v")]
 position = Vector2(230, 383)
+
+[node name="mob" parent="." instance=ExtResource("3_usmag")]
+position = Vector2(854, 467)
+
+[node name="mob2" parent="." instance=ExtResource("3_usmag")]
+position = Vector2(110, 487)
+
+[node name="mob3" parent="." instance=ExtResource("3_usmag")]
+position = Vector2(138, 177)
+
+[node name="mob4" parent="." instance=ExtResource("3_usmag")]
+position = Vector2(542, 201)

@@ -3,3 +3,7 @@ res://scenes/tree.tscn
 res://scenes/business_man.tscn
 res://characters/happy_boo/happy_boo.tscn
 res://scenes/player.tscn
+res://scenes/mob.tscn
+res://mob.gd
+res://scripts/business_man.gd
+res://scenes/money.tscn

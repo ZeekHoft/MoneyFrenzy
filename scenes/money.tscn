@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv7x0ioycxvah"]
+
+[ext_resource type="Texture2D" uid="uid://lc12vbvjbmgl" path="res://images/money.png" id="1_r3sf5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1y21"]
+radius = 132.555
+
+[node name="Money" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_w1y21")
+
+[node name="pivotMoney" type="Marker2D" parent="."]
+
+[node name="Money" type="Sprite2D" parent="pivotMoney"]
+position = Vector2(13, -2.38419e-07)
+scale = Vector2(0.503426, 0.634352)
+texture = ExtResource("1_r3sf5")
+
+[node name="throwMoney" type="Marker2D" parent="pivotMoney/Money"]
