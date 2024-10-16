@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://5oh61jih13wc"]
+
+[ext_resource type="PackedScene" uid="uid://28foeieqplhj" path="res://scenes/tree.tscn" id="2_biit0"]
+[ext_resource type="PackedScene" uid="uid://d87r4mywukd7" path="res://scenes/business_man.tscn" id="2_f6q2v"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Tree" parent="." instance=ExtResource("2_biit0")]
+position = Vector2(341, 201)
+
+[node name="Tree2" parent="." instance=ExtResource("2_biit0")]
+position = Vector2(686, 253)
+
+[node name="Tree3" parent="." instance=ExtResource("2_biit0")]
+position = Vector2(1012, 359)
+
+[node name="Tree4" parent="." instance=ExtResource("2_biit0")]
+position = Vector2(50, 117)
+
+[node name="Tree5" parent="." instance=ExtResource("2_biit0")]
+position = Vector2(438, 463)
+
+[node name="businessMan" parent="." instance=ExtResource("2_f6q2v")]
+position = Vector2(230, 383)
