@@ -1,9 +1,8 @@
-res://scenes/game.tscn
-res://scenes/tree.tscn
-res://scenes/business_man.tscn
-res://characters/happy_boo/happy_boo.tscn
-res://scenes/player.tscn
 res://scenes/mob.tscn
-res://mob.gd
-res://scripts/business_man.gd
+res://scenes/thought.tscn
 res://scenes/money.tscn
+res://scenes/game.tscn
+res://scenes/business_man.tscn
+res://scenes/random_images.tscn
+res://random_images.gd
+res://scripts/money.gd

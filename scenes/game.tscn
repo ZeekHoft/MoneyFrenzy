@@ -35,13 +35,13 @@ position = Vector2(438, 463)
 position = Vector2(230, 383)
 
 [node name="mob" parent="." instance=ExtResource("3_usmag")]
-position = Vector2(854, 467)
+position = Vector2(662, 430)
 
 [node name="mob2" parent="." instance=ExtResource("3_usmag")]
-position = Vector2(110, 487)
+position = Vector2(556, 217)
 
 [node name="mob3" parent="." instance=ExtResource("3_usmag")]
-position = Vector2(138, 177)
+position = Vector2(575, 550)
 
 [node name="mob4" parent="." instance=ExtResource("3_usmag")]
-position = Vector2(542, 201)
+position = Vector2(493, 162)

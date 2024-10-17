@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b20yp6d1wkslj"]
+
+[ext_resource type="Texture2D" uid="uid://kl76mpns3sqc" path="res://images/object6.png" id="1_gftds"]
+[ext_resource type="Script" path="res://random_images.gd" id="1_n4o8r"]
+
+[node name="random_images" type="Sprite2D"]
+position = Vector2(225, 91)
+texture = ExtResource("1_gftds")
+region_enabled = true
+region_rect = Rect2(0, -0.1, 70.425, 70)
+script = ExtResource("1_n4o8r")

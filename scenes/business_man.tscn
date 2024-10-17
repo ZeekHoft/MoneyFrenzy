@@ -163,10 +163,11 @@ radius = 31.0
 height = 106.0
 
 [node name="businessMan" type="CharacterBody2D"]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_cm7y0")
 
 [node name="Shadow" type="Sprite2D" parent="."]
-position = Vector2(17.25, -12.25)
+position = Vector2(5.71428, -24.2857)
 scale = Vector2(7.60938, 3.57813)
 texture = ExtResource("2_mifeh")
 
@@ -185,4 +186,4 @@ shape = SubResource("CapsuleShape2D_87ulo")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Money" parent="." instance=ExtResource("4_q8pei")]
-position = Vector2(27, -27)
+position = Vector2(8, -50)
