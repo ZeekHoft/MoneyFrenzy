@@ -6,3 +6,6 @@ res://scenes/business_man.tscn
 res://scenes/random_images.tscn
 res://random_images.gd
 res://scripts/money.gd
+res://scenes/document.tscn
+res://scenes/cash.tscn
+res://scripts/cash.gd

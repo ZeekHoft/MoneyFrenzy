@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/business_man.gd" id="1_cm7y0"]
 [ext_resource type="Texture2D" uid="uid://b72hwi366h8aq" path="res://images/business_man.png" id="1_lw8bc"]
 [ext_resource type="Texture2D" uid="uid://bgxtjkayof65g" path="res://images/Shadow.png" id="2_mifeh"]
-[ext_resource type="PackedScene" uid="uid://dv7x0ioycxvah" path="res://scenes/money.tscn" id="4_q8pei"]
+[ext_resource type="PackedScene" uid="uid://dv7x0ioycxvah" path="res://scenes/document.tscn" id="4_wjqe4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1u72x"]
 atlas = ExtResource("1_lw8bc")
@@ -185,5 +185,5 @@ shape = SubResource("CapsuleShape2D_87ulo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Money" parent="." instance=ExtResource("4_q8pei")]
+[node name="Money" parent="." instance=ExtResource("4_wjqe4")]
 position = Vector2(8, -50)
