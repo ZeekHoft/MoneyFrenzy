@@ -3,7 +3,7 @@ extends Area2D
 var travelled_distance = 0
 func _physics_process(delta):
 	
-	const MONEY_SPEED = 1000
+	const MONEY_SPEED = 500
 	const RANGE = 1200
 	
 	var direction_cash = Vector2.RIGHT.rotated(rotation)#rotate the cash base on where u loan HAHAH
