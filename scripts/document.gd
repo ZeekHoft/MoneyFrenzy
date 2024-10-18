@@ -18,7 +18,20 @@ func _physics_process(delta):
 		#look_at(target_nemies.global_position)
 
 
+func shoot():
+	const CASH = preload("res://scenes/cash.tscn")
+	var new_cash = CASH.instantiate() #create new cash
+	
+	new_cash.global_position = %throwMoney.global_position #position of throwMoney
+	new_cash.global_rotation = %throwMoney.global_rotation #rotate the money as we throw is from the above codes
+	#use gloabl_position for absolute position of that specific node
+	#use position for only parent node, in this case the money itself
+	%throwMoney.add_child(new_cash)
+	
+	
+
+ 
 
 
-
-
+func _on_timer_timeout():
+	shoot()

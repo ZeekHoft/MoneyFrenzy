@@ -15,12 +15,19 @@ script = ExtResource("1_1lkbg")
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_w1y21")
 
-[node name="pivotMoney" type="Marker2D" parent="."]
+[node name="pivotDocument" type="Marker2D" parent="."]
 
-[node name="Paper" type="Sprite2D" parent="pivotMoney"]
+[node name="Paper" type="Sprite2D" parent="pivotDocument"]
 position = Vector2(72, 1)
 texture = ExtResource("2_3vay3")
 
-[node name="throwMoney" type="Marker2D" parent="pivotMoney/Paper"]
+[node name="throwMoney" type="Marker2D" parent="pivotDocument/Paper"]
+unique_name_in_owner = true
 position = Vector2(8, -1)
 scale = Vector2(0.503426, 0.634352)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

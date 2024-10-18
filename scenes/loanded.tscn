@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://bkw81hi8nlquc"]
+
+[ext_resource type="Texture2D" uid="uid://cglw2aauk2a47" path="res://images/smoke_money.png" id="1_841bj"]
+[ext_resource type="Script" path="res://scripts/loanded.gd" id="2_tmruh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dsf4"]
+atlas = ExtResource("1_841bj")
+region = Rect2(0, 0, 40, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx3ml"]
+atlas = ExtResource("1_841bj")
+region = Rect2(40, 0, 40, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsbie"]
+atlas = ExtResource("1_841bj")
+region = Rect2(80, 0, 40, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bokon"]
+atlas = ExtResource("1_841bj")
+region = Rect2(120, 0, 40, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njsc7"]
+atlas = ExtResource("1_841bj")
+region = Rect2(160, 0, 40, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8ocn"]
+atlas = ExtResource("1_841bj")
+region = Rect2(200, 0, 40, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kokak"]
+atlas = ExtResource("1_841bj")
+region = Rect2(240, 0, 40, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0ab1"]
+atlas = ExtResource("1_841bj")
+region = Rect2(280, 0, 40, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ybx1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dsf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx3ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsbie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bokon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njsc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8ocn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kokak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0ab1")
+}],
+"loop": false,
+"name": &"loanded",
+"speed": 5.0
+}]
+
+[node name="loanded" type="Node2D"]
+script = ExtResource("2_tmruh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -39)
+scale = Vector2(2.35, 2.45556)
+sprite_frames = SubResource("SpriteFrames_ybx1u")
+animation = &"loanded"
+autoplay = "loanded"
+frame = 7
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

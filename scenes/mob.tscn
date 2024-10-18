@@ -58,11 +58,10 @@ collision_layer = 2
 script = ExtResource("1_rski6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(5, -42)
+position = Vector2(5.55556, -48.8889)
 scale = Vector2(5.838, 6)
 sprite_frames = SubResource("SpriteFrames_d5jly")
 animation = &"running"
-frame_progress = 0.100355
 
 [node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]
 position = Vector2(0, 2.16667)
