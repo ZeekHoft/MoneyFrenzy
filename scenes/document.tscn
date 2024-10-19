@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dv7x0ioycxvah"]
 
 [ext_resource type="Script" path="res://scripts/document.gd" id="1_1lkbg"]
-[ext_resource type="Texture2D" uid="uid://v35wt58muerd" path="res://images/paper.png" id="2_3vay3"]
+[ext_resource type="Texture2D" uid="uid://su4mq6d8amji" path="res://images/document2.png" id="2_bcjk7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w1y21"]
 radius = 182.525
@@ -12,19 +12,21 @@ collision_mask = 2
 script = ExtResource("1_1lkbg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 6)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_w1y21")
 
 [node name="pivotDocument" type="Marker2D" parent="."]
 
-[node name="Paper" type="Sprite2D" parent="pivotDocument"]
-position = Vector2(72, 1)
-texture = ExtResource("2_3vay3")
+[node name="Document2" type="Sprite2D" parent="pivotDocument"]
+position = Vector2(70, -7)
+scale = Vector2(0.152132, 0.171196)
+texture = ExtResource("2_bcjk7")
 
-[node name="throwMoney" type="Marker2D" parent="pivotDocument/Paper"]
+[node name="throwMoney" type="Marker2D" parent="pivotDocument/Document2"]
 unique_name_in_owner = true
-position = Vector2(8, -1)
-scale = Vector2(0.503426, 0.634352)
+position = Vector2(65.7325, 40.8889)
+scale = Vector2(3.30915, 3.70542)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3

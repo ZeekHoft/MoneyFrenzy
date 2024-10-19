@@ -64,7 +64,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"loanded",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [node name="loanded" type="Node2D"]

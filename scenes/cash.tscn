@@ -43,6 +43,7 @@ script = ExtResource("1_tp5fc")
 
 [node name="Money" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 4)
+rotation = -0.523598
 scale = Vector2(0.548455, 0.599335)
 sprite_frames = SubResource("SpriteFrames_b5tj3")
 autoplay = "default"
