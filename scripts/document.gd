@@ -4,11 +4,9 @@ extends Area2D
 
 
 func _physics_process(delta):
+
 	var enemies_in_range = get_global_mouse_position()
 	look_at(enemies_in_range)
-	
-	
-	
 	
 	##check if the enemies are in range
 	#if enemies_in_range.size() > 0:
@@ -28,10 +26,15 @@ func shoot():
 	#use position for only parent node, in this case the money itself
 	%throwMoney.add_child(new_cash)
 	
+
+func _input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		shoot()
+
+#func _on_button_button_down():
+	#if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		#shoot()
 	
+#func _on_timer_timeout():
+	#shoot()
 
- 
-
-
-func _on_timer_timeout():
-	shoot()

@@ -1,31 +1,98 @@
-[gd_scene load_steps=3 format=3 uid="uid://5oh61jih13wc"]
+[gd_scene load_steps=9 format=3 uid="uid://5oh61jih13wc"]
 
+[ext_resource type="Script" path="res://scripts/main_game.gd" id="1_php2n"]
 [ext_resource type="PackedScene" uid="uid://d87r4mywukd7" path="res://scenes/business_man.tscn" id="2_f6q2v"]
-[ext_resource type="PackedScene" uid="uid://beoqdp18yive5" path="res://scenes/mob.tscn" id="3_usmag"]
+[ext_resource type="Texture2D" uid="uid://bpae8hnkmbrdv" path="res://images/Office tiles/wall.png" id="3_qrumk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kg722"]
+texture = ExtResource("3_qrumk")
+texture_region_size = Vector2i(17, 16)
+6:9/0 = 0
+2:13/size_in_atlas = Vector2i(1, 3)
+2:13/0 = 0
+6:13/size_in_atlas = Vector2i(1, 3)
+6:13/0 = 0
+3:13/size_in_atlas = Vector2i(3, 3)
+3:13/0 = 0
+2:10/size_in_atlas = Vector2i(1, 3)
+2:10/0 = 0
+6:10/size_in_atlas = Vector2i(1, 3)
+6:10/0 = 0
+3:9/size_in_atlas = Vector2i(3, 3)
+3:9/0 = 0
+2:9/0 = 0
+8:9/size_in_atlas = Vector2i(3, 3)
+8:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g5mrb"]
+tile_size = Vector2i(51, 16)
+sources/0 = SubResource("TileSetAtlasSource_kg722")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq5wl"]
+size = Vector2(2083.75, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yierd"]
+size = Vector2(16.5, 995)
+
+[sub_resource type="Curve2D" id="Curve2D_q1rvc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -9.00012, 2.99994, 0, 0, 0, 0, 2055, 4.99994, 0, 0, 0, 0, 2048, 952, 0, 0, 0, 0, 2.99988, 961, 0, 0, 0, 0, -9.00012, 2.99994)
+}
+point_count = 5
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_php2n")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_right = 56.0
+offset_bottom = 60.0
+scale = Vector2(28.8876, 16.4581)
+color = Color(0.427451, 0.239216, 0.172549, 1)
+
+[node name="walls" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_g5mrb")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65535, 196608, 9, -65536, 196608, 9, -65534, 196608, 9, -65533, 196608, 9, -65532, 196608, 9, -65531, 196608, 9, -65530, 196608, 9, -65529, 196608, 9, -65528, 196608, 9, -65527, 196608, 9, -65526, 196608, 9, -65525, 196608, 9, -65524, 196608, 9, -65523, 196608, 9, -65522, 196608, 9, -65521, 196608, 9, -65520, 196608, 9, -65519, 196608, 9, -65518, 196608, 9, -65517, 196608, 9, -65516, 196608, 9, -65515, 196608, 9, -65514, 196608, 9, -65513, 196608, 9, -65512, 196608, 9, -65511, 196608, 9, -65510, 196608, 9, -65509, 196608, 9, -65508, 196608, 9, -65507, 196608, 9, -65506, 196608, 9, -65505, 196608, 9, -65504, 196608, 9, -65503, 196608, 9, -65502, 196608, 9, -65501, 196608, 9, -65500, 196608, 9, -65499, 196608, 9, -65498, 196608, 9, -65497, 196608, 9, -65496, 196608, 9, -65495, 196608, 9, -1, 196608, 9, 65535, 131072, 10, 131071, 131072, 10, 196607, 131072, 10, 262143, 131072, 10, 327679, 131072, 10, 393215, 131072, 10, 458751, 131072, 10, 524287, 131072, 10, 589823, 131072, 10, 655359, 131072, 10, 720895, 131072, 10, 786431, 131072, 10, 851967, 131072, 10, 917503, 131072, 10, 983039, 131072, 10, 1048575, 131072, 10, 1114111, 131072, 10, 1179647, 131072, 10, 1245183, 131072, 10, 1310719, 131072, 10, 1376255, 131072, 10, 1441791, 131072, 10, 1507327, 131072, 10, 1572863, 131072, 10, 1638399, 131072, 10, 1703935, 131072, 10, 1769471, 131072, 10, 1835007, 131072, 10, 1900543, 131072, 10, 1966079, 131072, 10, 2031615, 131072, 10, 2097151, 131072, 10, 2162687, 131072, 10, 2228223, 131072, 10, 2293759, 131072, 10, 2359295, 131072, 10, 2424831, 131072, 10, 2490367, 131072, 10, 2555903, 131072, 10, 2621439, 131072, 10, 2686975, 131072, 10, 2752511, 131072, 10, 2818047, 131072, 10, 2883583, 131072, 10, 2949119, 131072, 10, 3014655, 131072, 10, 3080191, 131072, 10, 3145727, 131072, 10, 3211263, 131072, 10, 3276799, 131072, 10, 3342335, 131072, 10, 3407871, 131072, 10, 3473407, 131072, 10, 3538943, 131072, 10, 3604479, 131072, 10, 3670015, 131072, 10, 3735551, 131072, 10, 3801087, 131072, 10, 3866623, 131072, 10, 3932159, 131072, 10, 3997695, 131072, 10, 4063231, 196608, 13, 3932200, 393216, 10, 3866664, 393216, 10, 3801128, 393216, 10, 3735592, 393216, 10, 3670056, 393216, 10, 3604520, 393216, 10, 3538984, 393216, 10, 3473448, 393216, 10, 3407912, 393216, 10, 3342376, 393216, 10, 3276840, 393216, 10, 3211304, 393216, 10, 3145768, 393216, 10, 3080232, 393216, 10, 3014696, 393216, 10, 2949160, 393216, 10, 2883624, 393216, 10, 2818088, 393216, 10, 2752552, 393216, 10, 2687016, 393216, 10, 2621480, 393216, 10, 2555944, 393216, 10, 2490408, 393216, 10, 2424872, 393216, 10, 2359336, 393216, 10, 2293800, 393216, 10, 2228264, 393216, 10, 2162728, 393216, 10, 2097192, 393216, 10, 2031656, 393216, 10, 1966120, 393216, 10, 1900584, 393216, 10, 1835048, 393216, 10, 1769512, 393216, 10, 1703976, 393216, 10, 1638440, 393216, 10, 1572904, 393216, 10, 1507368, 393216, 10, 1441832, 393216, 10, 1376296, 393216, 10, 1310760, 393216, 10, 1114152, 393216, 10, 1048616, 393216, 10, 983080, 393216, 10, 917544, 393216, 10, 852008, 393216, 10, 786472, 393216, 10, 720936, 393216, 10, 655400, 393216, 10, 589864, 393216, 10, 524328, 393216, 10, 458792, 393216, 10, 393256, 393216, 10, 327720, 393216, 10, 262184, 393216, 10, 196648, 393216, 10, 131112, 393216, 10, 65576, 393216, 10, 40, 393216, 10, 3997736, 196608, 13, 3997735, 196608, 13, 3997734, 196608, 13, 3997733, 196608, 13, 3997732, 196608, 13, 3997731, 196608, 13, 3997730, 196608, 13, 3997729, 196608, 13, 3997728, 196608, 13, 3997727, 196608, 13, 3997726, 196608, 13, 3997725, 196608, 13, 3997724, 196608, 13, 3997723, 196608, 13, 3997722, 196608, 13, 3997721, 196608, 13, 3997720, 196608, 13, 3997719, 196608, 13, 3997718, 196608, 13, 3997717, 196608, 13, 3997716, 196608, 13, 3997715, 196608, 13, 3997714, 196608, 13, 3997713, 196608, 13, 3997712, 196608, 13, 3997711, 196608, 13, 3997710, 196608, 13, 3997709, 196608, 13, 3997708, 196608, 13, 3997707, 196608, 13, 3997706, 196608, 13, 3997705, 196608, 13, 3997704, 196608, 13, 3997703, 196608, 13, 3997702, 196608, 13, 3997701, 196608, 13, 3997700, 196608, 13, 3997699, 196608, 13, 3997698, 196608, 13, 3997697, 196608, 13, 3997696, 196608, 13)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_right = 71.0
-offset_bottom = 60.0
-scale = Vector2(28.8876, 16.2181)
-color = Color(0.427451, 0.239216, 0.172549, 1)
-
 [node name="businessMan" parent="." instance=ExtResource("2_f6q2v")]
 position = Vector2(1162, 493)
 
-[node name="mob" parent="." instance=ExtResource("3_usmag")]
-position = Vector2(662, 430)
+[node name="borders" type="StaticBody2D" parent="."]
+visible = false
 
-[node name="mob2" parent="." instance=ExtResource("3_usmag")]
-position = Vector2(556, 217)
+[node name="top" type="CollisionShape2D" parent="borders"]
+position = Vector2(1026.88, -21)
+shape = SubResource("RectangleShape2D_nq5wl")
 
-[node name="mob3" parent="." instance=ExtResource("3_usmag")]
-position = Vector2(575, 550)
+[node name="left" type="CollisionShape2D" parent="borders"]
+position = Vector2(-19.25, 483.5)
+shape = SubResource("RectangleShape2D_yierd")
 
-[node name="mob4" parent="." instance=ExtResource("3_usmag")]
-position = Vector2(493, 162)
+[node name="bottom" type="CollisionShape2D" parent="borders"]
+position = Vector2(1023, 992)
+shape = SubResource("RectangleShape2D_nq5wl")
+
+[node name="right" type="CollisionShape2D" parent="borders"]
+position = Vector2(2072, 486)
+shape = SubResource("RectangleShape2D_yierd")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(0.00012207, 6.10352e-05)
+scale = Vector2(1, 1)
+curve = SubResource("Curve2D_q1rvc")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(-9.00012, 2.99994)
+rotation = 0.000968992
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

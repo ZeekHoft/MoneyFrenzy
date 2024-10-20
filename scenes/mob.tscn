@@ -77,6 +77,6 @@ position = Vector2(73.3333, -58.8889)
 scale = Vector2(0.589, 0.819094)
 texture = ExtResource("4_1awi4")
 
-[node name="random_images" parent="." instance=ExtResource("5_mfvb2")]
-position = Vector2(72.2222, -104.444)
-scale = Vector2(0.636398, 0.635489)
+[node name="random_images" parent="BubbleThought" instance=ExtResource("5_mfvb2")]
+position = Vector2(-1.88642, -55.6164)
+scale = Vector2(1.08047, 0.775844)

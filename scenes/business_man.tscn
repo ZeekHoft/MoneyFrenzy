@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d87r4mywukd7"]
+[gd_scene load_steps=30 format=3 uid="uid://d87r4mywukd7"]
 
 [ext_resource type="Script" path="res://scripts/business_man.gd" id="1_cm7y0"]
 [ext_resource type="Texture2D" uid="uid://b72hwi366h8aq" path="res://images/business_man.png" id="1_lw8bc"]
@@ -162,6 +162,16 @@ animations = [{
 radius = 31.0
 height = 106.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xyxvo"]
+radius = 28.1845
+height = 99.2896
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgm57"]
+bg_color = Color(0.28485, 0.28485, 0.28485, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4te2"]
+bg_color = Color(0.209932, 0.608595, 0.854856, 1)
+
 [node name="businessMan" type="CharacterBody2D"]
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_cm7y0")
@@ -183,7 +193,35 @@ frame_progress = 0.995099
 position = Vector2(8, -53)
 shape = SubResource("CapsuleShape2D_87ulo")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Money" parent="." instance=ExtResource("4_wjqe4")]
 position = Vector2(8, -50)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -25
+limit_top = -25
+limit_right = 2066
+limit_bottom = 980
+position_smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="reputation_box" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(10, -7.14286)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="reputation_box"]
+position = Vector2(-1.42857, -45.7143)
+scale = Vector2(1.21647, 1.12226)
+shape = SubResource("CapsuleShape2D_xyxvo")
+debug_color = Color(0.688867, 0, 0.118247, 0.42)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -92.8571
+offset_top = -154.286
+offset_right = 95.1429
+offset_bottom = -127.286
+theme_override_styles/background = SubResource("StyleBoxFlat_vgm57")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x4te2")
+value = 100.0

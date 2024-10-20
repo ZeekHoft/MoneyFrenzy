@@ -3,6 +3,6 @@ res://scenes/business_man.tscn
 res://scenes/document.tscn
 res://scenes/cash.tscn
 res://scenes/mob.tscn
-res://scenes/loanded.tscn
-res://smoke_explosion/smoke_explosion.tscn
-res://scenes/tree.tscn
+res://scripts/business_man.gd
+res://scripts/main_game.gd
+res://mob.gd

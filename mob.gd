@@ -9,7 +9,7 @@ var health = 1
 
 func _physics_process(delta):
 	var mob_direction = global_position.direction_to(business_man.global_position)
-	velocity = mob_direction * 100.0
+	velocity = mob_direction * 300.0
 	animated_sprite_2d.play("running")
 	move_and_slide()
 	

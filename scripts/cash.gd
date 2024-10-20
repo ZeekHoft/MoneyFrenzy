@@ -13,12 +13,6 @@ func _physics_process(delta):
 	travelled_distance += MONEY_SPEED * delta
 	if travelled_distance > RANGE:
 		queue_free()
-		
-		
-	
-	
-
-
 
 func _on_body_entered(body):
 	queue_free()

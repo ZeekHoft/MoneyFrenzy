@@ -28,8 +28,13 @@ unique_name_in_owner = true
 position = Vector2(65.7325, 40.8889)
 scale = Vector2(3.30915, 3.70542)
 
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
 autostart = true
 
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
