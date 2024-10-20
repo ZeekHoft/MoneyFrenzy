@@ -6,3 +6,8 @@ res://scenes/mob.tscn
 res://scripts/business_man.gd
 res://scripts/main_game.gd
 res://mob.gd
+res://scripts/cash.gd
+res://scenes/revenue.tscn
+res://scripts/revenue.gd
+res://scripts/game rev.gd
+res://scripts/document.gd

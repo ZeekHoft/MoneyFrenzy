@@ -3,6 +3,8 @@ extends Area2D
 
 
 
+
+
 func _physics_process(delta):
 
 	var enemies_in_range = get_global_mouse_position()
@@ -28,7 +30,7 @@ func shoot():
 	
 
 func _input(event):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT :
 		shoot()
 
 #func _on_button_button_down():

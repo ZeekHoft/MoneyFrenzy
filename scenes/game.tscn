@@ -62,7 +62,7 @@ layer_0/tile_data = PackedInt32Array(-65535, 196608, 9, -65536, 196608, 9, -6553
 layer = -1
 
 [node name="businessMan" parent="." instance=ExtResource("2_f6q2v")]
-position = Vector2(1162, 493)
+position = Vector2(1069, 496)
 
 [node name="Camera2D" type="Camera2D" parent="businessMan"]
 limit_left = -25

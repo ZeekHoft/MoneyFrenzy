@@ -29,10 +29,9 @@ func _physics_process(delta):
 		
 		
 		
-	const DAMAGE_REP = 10
+	const DAMAGE_REP = 400
 	var overlapping_mobs = %reputation_box.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
-		print(business_repuation)
 		business_repuation -= DAMAGE_REP * overlapping_mobs.size() * delta
 		%ProgressBar.value = business_repuation
 		if business_repuation <= 0.0:
