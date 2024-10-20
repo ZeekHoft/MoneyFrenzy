@@ -196,14 +196,6 @@ shape = SubResource("CapsuleShape2D_87ulo")
 [node name="Money" parent="." instance=ExtResource("4_wjqe4")]
 position = Vector2(8, -50)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_left = -25
-limit_top = -25
-limit_right = 2066
-limit_bottom = 980
-position_smoothing_enabled = true
-editor_draw_limits = true
-
 [node name="reputation_box" type="Area2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(10, -7.14286)
