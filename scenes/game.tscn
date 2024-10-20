@@ -97,7 +97,7 @@ curve = SubResource("Curve2D_q1rvc")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
 position = Vector2(-18.0376, 6.03351)
-rotation = -0.000498576
+rotation = -0.000498578
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -146,7 +146,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.184745, 0.395171, 0.220699, 1)
+color = Color(0.184314, 0.396078, 0.219608, 0.380392)
 
 [node name="retart" type="Button" parent="gameover/ColorRect2"]
 layout_mode = 1
