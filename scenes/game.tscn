@@ -431,12 +431,10 @@ rotation = 0.0512286
 
 [node name="mob" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 0.5
 autostart = true
 
 [node name="mob2" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 2.0
 autostart = true
 
 [node name="score" type="CanvasLayer" parent="."]
@@ -454,22 +452,35 @@ offset_bottom = -155.0
 grow_vertical = 0
 script = ExtResource("2_sw3fg")
 
-[node name="revenure" type="Label" parent="score/game_rev"]
+[node name="income" type="Label" parent="score/game_rev"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = -1134.0
-offset_top = -438.0
+offset_top = -435.0
 offset_right = -839.0
-offset_bottom = -383.0
+offset_bottom = -380.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.176471, 0.443137, 0.74902, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Total Income: 300"
+text = "Gained Income: 300"
+
+[node name="bank rev" type="Label" parent="score/game_rev"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1134.0
+offset_top = -397.0
+offset_right = -839.0
+offset_bottom = -357.0
+theme_override_colors/font_color = Color(0.176471, 0.443137, 0.74902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_vg7ry")
+theme_override_font_sizes/font_size = 40
+text = "Bank Revenue: 300"
 
 [node name="Label" type="Label" parent="score/game_rev"]
 layout_mode = 0
@@ -543,10 +554,10 @@ text = "Bankrupt Game Over"
 [node name="score_display" type="Label" parent="gameover/ColorRect2"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 277.0
-offset_top = 299.0
-offset_right = 471.0
-offset_bottom = 339.0
+offset_left = 273.0
+offset_top = 279.0
+offset_right = 500.0
+offset_bottom = 319.0
 theme_override_colors/font_color = Color(0.176471, 0.443137, 0.74902, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
@@ -561,10 +572,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 49.0
-offset_top = -28.0
-offset_right = 253.0
-offset_bottom = 43.0
+offset_left = -303.0
+offset_top = 2.0
+offset_right = -79.0
+offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.176471, 0.443137, 0.74902, 1)
@@ -580,10 +591,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -116.0
-offset_top = 78.0
-offset_right = 62.0
-offset_bottom = 132.0
+offset_left = -97.0
+offset_top = 111.0
+offset_right = 81.0
+offset_bottom = 165.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.416636, 0.645464, 0.955695, 1)

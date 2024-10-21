@@ -68,6 +68,7 @@ animations = [{
 }]
 
 [node name="loanded" type="Node2D"]
+position = Vector2(-1, -33)
 script = ExtResource("2_tmruh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

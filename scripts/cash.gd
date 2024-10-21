@@ -26,7 +26,7 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	queue_free()
-	cash.add_rev()
+	#cash.add_rev()
 	if body.has_method("take_damage"):
 		body.take_damage()
 		

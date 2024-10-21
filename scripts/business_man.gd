@@ -3,13 +3,12 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var bar_revenue = get_node("/root/Game/score/revenue_bar/rev_bar")
-
+@onready var income = get_node("/root/Game/score/game_rev")
 var player_direction = Vector2.ZERO
 signal ruined_reputation
-var business_repuation = 100.0
 
 
-
+var business_repuation_dmg = 100.0
 
 func _physics_process(delta):
 	player_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -31,21 +30,19 @@ func _physics_process(delta):
 		
 		
 	const DAMAGE_REP = 10
+
 	var overlapping_mobs = %reputation_box.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
-		business_repuation -= DAMAGE_REP * overlapping_mobs.size() * delta
-		bar_revenue.value = business_repuation
+		business_repuation_dmg -= DAMAGE_REP * overlapping_mobs.size() * delta
+		bar_revenue.value = business_repuation_dmg
+		print(business_repuation_dmg)
 		const STEAL_INCOME = preload("res://scenes/minus_reputation.tscn")
 		var steal_income= STEAL_INCOME.instantiate()
 		add_child(steal_income)
-		
-		
-	
-		if business_repuation <= 0.0:
+		if business_repuation_dmg <= 0.0:
 			ruined_reputation.emit()
-			
-				
-			
+	
+	
 
 
 # Method to get the current player direction

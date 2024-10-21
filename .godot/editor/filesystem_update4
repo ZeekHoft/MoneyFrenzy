@@ -15,3 +15,6 @@ res://scripts/mob1.gd
 res://scenes/loanded.tscn
 res://scripts/loanded.gd
 res://scripts/sfx_loanded.gd
+res://scenes/items.tscn
+res://scripts/items.gd
+res://scripts/game rev.gd
