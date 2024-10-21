@@ -1,4 +1,6 @@
 AudioStreamPlayer2D
+AnimationPlayer
+AudioStreamPlayer
 AnimatedSprite2D
 Timer
 Node
@@ -10,6 +12,3 @@ Control
 TileMap
 ProgressBar
 CanvasModulate
-Camera2D
-Node2D
-Button

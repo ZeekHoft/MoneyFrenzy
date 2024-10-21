@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://5oh61jih13wc"]
+[gd_scene load_steps=25 format=3 uid="uid://5oh61jih13wc"]
 
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_php2n"]
 [ext_resource type="PackedScene" uid="uid://d87r4mywukd7" path="res://scenes/business_man.tscn" id="2_f6q2v"]
@@ -13,8 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://y8mfeaj2v8xm" path="res://item scenes/chair.tscn" id="11_eihuh"]
 [ext_resource type="Texture2D" uid="uid://tc244p4bconf" path="res://images/star3.png" id="11_fft3b"]
 [ext_resource type="AudioStream" uid="uid://g54m6ifmtu0c" path="res://sfx/bg music.mp3" id="13_40ow8"]
-[ext_resource type="AudioStream" uid="uid://dvcmw6gkonejk" path="res://sfx/cusomter_loanded2.mp3" id="14_nr5on"]
-[ext_resource type="Script" path="res://scripts/sfx_loanded.gd" id="15_f3mjs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gqtxe"]
 texture = ExtResource("3_uyd7i")
@@ -594,12 +592,6 @@ text = "Play Again?"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_40ow8")
 pitch_scale = 1.65
-autoplay = true
-
-[node name="sfx_loanded" type="AudioStreamPlayer2D" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("14_nr5on")
-script = ExtResource("15_f3mjs")
 
 [connection signal="ruined_reputation" from="businessMan" to="." method="_on_business_man_ruined_reputation"]
 [connection signal="timeout" from="mob" to="." method="_on_timer_timeout"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dv7x0ioycxvah"]
+[gd_scene load_steps=5 format=3 uid="uid://dv7x0ioycxvah"]
 
 [ext_resource type="Script" path="res://scripts/document.gd" id="1_1lkbg"]
 [ext_resource type="Texture2D" uid="uid://su4mq6d8amji" path="res://images/document2.png" id="2_bcjk7"]
+[ext_resource type="AudioStream" uid="uid://dvcmw6gkonejk" path="res://sfx/cusomter_loanded2.mp3" id="3_33c52"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w1y21"]
 radius = 182.525
@@ -35,6 +36,10 @@ offset_bottom = 8.0
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_33c52")
+volume_db = -8.0
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -22,7 +22,7 @@ func _physics_process(delta):
 		const LOW_INCOME = preload("res://scenes/low_incom.tscn")
 		var low_income = LOW_INCOME.instantiate()
 		get_parent().add_child(low_income)
-		print("gone")
+
 
 func _on_body_entered(body):
 	queue_free()

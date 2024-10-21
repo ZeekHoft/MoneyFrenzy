@@ -40,7 +40,7 @@ func _physics_process(delta):
 		add_child(steal_income)
 		
 		
-		print("ugh")
+	
 		if business_repuation <= 0.0:
 			ruined_reputation.emit()
 			

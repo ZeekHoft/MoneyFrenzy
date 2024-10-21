@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 var health = 2
 @onready var business_man = get_node("/root/Game/businessMan")
+@onready var sfx_loanded = get_node("/root/Game/sfx_loanded")
 @onready var animated_sprite_2d = $AnimatedSprite2D
+
 
 #var CycleCount: int = 0
 #var speed: int = 1
@@ -34,11 +36,13 @@ func _physics_process(delta):
 	
 func take_damage():
 	health -= 1
+	sfx_loanded.playsfx()
 	const LOANDED1 = preload("res://scenes/loanded.tscn")
 	var loanded1 = LOANDED1.instantiate()
 	get_parent().add_child(loanded1) 
 	loanded1.global_position = global_position
 	if health == 0:
+
 		queue_free()
 		const LOANDED2 = preload("res://scenes/loanded.tscn")
 		var loanded2 = LOANDED2.instantiate()
