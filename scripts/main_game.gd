@@ -4,10 +4,11 @@ extends Node2D
 @onready var game_rev = %game_rev
 @onready var score_display = %score_display
 
-
-
-
-
+func spaw_mob1():
+	var new_mob1 = preload("res://scenes/mob1.tscn").instantiate()
+	%PathFollow2D.progress_ratio = randf()
+	new_mob1.global_position = %PathFollow2D.global_position
+	add_child(new_mob1)
 
 func spawn_mob():
 	var new_mob = preload("res://scenes/mob.tscn").instantiate()
@@ -16,8 +17,11 @@ func spawn_mob():
 	add_child(new_mob)
 
 
+
+
 func _on_timer_timeout():
 	spawn_mob()
+	spaw_mob1()
 
 
 func _on_business_man_ruined_reputation():

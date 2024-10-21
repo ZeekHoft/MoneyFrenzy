@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://ytg68kvbpg1v"]
+
+[ext_resource type="Texture2D" uid="uid://dmg3pq2505xdl" path="res://images/low_income.png" id="1_6olps"]
+[ext_resource type="Script" path="res://scripts/low_incom.gd" id="1_lbmb8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exrlp"]
+atlas = ExtResource("1_6olps")
+region = Rect2(114, 0, 38, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_401u5"]
+atlas = ExtResource("1_6olps")
+region = Rect2(76, 0, 38, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fn3v5"]
+atlas = ExtResource("1_6olps")
+region = Rect2(38, 0, 38, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkp4u"]
+atlas = ExtResource("1_6olps")
+region = Rect2(0, 0, 38, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_afyh3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exrlp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_401u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fn3v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkp4u")
+}],
+"loop": false,
+"name": &"bad_rev",
+"speed": 6.0
+}]
+
+[node name="low_incom" type="Node2D"]
+script = ExtResource("1_lbmb8")
+
+[node name="low_income_animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(20, -54.125)
+scale = Vector2(2.47368, 2.48333)
+sprite_frames = SubResource("SpriteFrames_afyh3")
+animation = &"bad_rev"
+autoplay = "bad_rev"
+frame = 3
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="low_income_animation" to="." method="_on_low_income_animation_animation_finished"]

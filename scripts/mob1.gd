@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 1
+var health = 2
 @onready var business_man = get_node("/root/Game/businessMan")
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
@@ -21,7 +21,7 @@ func _physics_process(delta):
 	for i in CycleCount:
 		if i % 1000 == 0:
 			speed += 1
-	print(speed)
+
 	
 	
 	var player_direction = business_man.get_player_direction()

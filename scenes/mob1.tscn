@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://bp4j3wcw7gevi"]
+
+[ext_resource type="Script" path="res://scripts/mob1.gd" id="1_xbjam"]
+[ext_resource type="Texture2D" uid="uid://cgap4f15odmbb" path="res://images/free-office-pixel-art/Julia_walk_Rigth.png" id="2_pbebt"]
+[ext_resource type="Texture2D" uid="uid://bgxtjkayof65g" path="res://images/Shadow.png" id="3_dggxp"]
+[ext_resource type="Texture2D" uid="uid://drn1kf7lkr0e3" path="res://images/bubble_thought.png" id="4_6ir4e"]
+[ext_resource type="PackedScene" uid="uid://b20yp6d1wkslj" path="res://scenes/random_images.tscn" id="5_i5mjt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayhij"]
+atlas = ExtResource("2_pbebt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqhjy"]
+atlas = ExtResource("2_pbebt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3afy"]
+atlas = ExtResource("2_pbebt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o26ee"]
+atlas = ExtResource("2_pbebt")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5jly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayhij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqhjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3afy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o26ee")
+}],
+"loop": true,
+"name": &"running",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdit1"]
+radius = 23.0
+height = 80.0
+
+[node name="mob" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_xbjam")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -36)
+scale = Vector2(2.813, 2.891)
+sprite_frames = SubResource("SpriteFrames_d5jly")
+animation = &"running"
+frame_progress = 0.0381055
+
+[node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 2.16667)
+scale = Vector2(0.9137, 0.795247)
+texture = ExtResource("3_dggxp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.33333, -25.5556)
+shape = SubResource("CapsuleShape2D_rdit1")
+
+[node name="BubbleThought" type="Sprite2D" parent="."]
+position = Vector2(73.3333, -58.8889)
+scale = Vector2(0.589, 0.819094)
+texture = ExtResource("4_6ir4e")
+
+[node name="random_images" parent="BubbleThought" instance=ExtResource("5_i5mjt")]
+position = Vector2(-1.88642, -55.6164)
+scale = Vector2(1.08047, 0.775844)

@@ -2,8 +2,9 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
-var player_direction = Vector2.ZERO
+@onready var bar_revenue = get_node("/root/Game/score/revenue_bar/rev_bar")
 
+var player_direction = Vector2.ZERO
 signal ruined_reputation
 var business_repuation = 100.0
 
@@ -29,11 +30,11 @@ func _physics_process(delta):
 		
 		
 		
-	const DAMAGE_REP = 400
+	const DAMAGE_REP = 10
 	var overlapping_mobs = %reputation_box.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
 		business_repuation -= DAMAGE_REP * overlapping_mobs.size() * delta
-		%ProgressBar.value = business_repuation
+		bar_revenue.value = business_repuation
 		if business_repuation <= 0.0:
 			ruined_reputation.emit()
 

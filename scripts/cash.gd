@@ -4,6 +4,7 @@ extends Area2D
 @onready var cash = get_node("/root/Game/score/game_rev")
 
 
+
 var travelled_distance = 0
 func _physics_process(delta):
 	
@@ -18,6 +19,9 @@ func _physics_process(delta):
 	if travelled_distance > RANGE:
 		queue_free()
 		cash.minus_rev()
+		const LOW_INCOME = preload("res://scenes/low_incom.tscn")
+		var low_income = LOW_INCOME.instantiate()
+		get_parent().add_child(low_income)
 		print("gone")
 
 func _on_body_entered(body):
