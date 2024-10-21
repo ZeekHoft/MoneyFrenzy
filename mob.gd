@@ -4,24 +4,24 @@ var health = 1
 @onready var business_man = get_node("/root/Game/businessMan")
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
-var CycleCount: int = 0
-var speed: int = 1
+#var CycleCount: int = 0
+#var speed: int = 1
 
 
 func _physics_process(delta):
 
 	var mob_direction = global_position.direction_to(business_man.global_position)
-	velocity = mob_direction * speed
+	velocity = mob_direction * 100
 	animated_sprite_2d.play("running")
 	move_and_slide()
 	
 
-	#speed over time need fix
-	CycleCount += 1
-	for i in CycleCount:
-		if i % 1000 == 0:
-			speed += 1
-	print(speed)
+	##speed over time need fix
+	#CycleCount += 1
+	#for i in CycleCount:
+		#if i % 1000 == 0:
+			#speed += 1
+	##print(speed)
 	
 	
 	var player_direction = business_man.get_player_direction()

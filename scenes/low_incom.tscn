@@ -43,8 +43,8 @@ animations = [{
 script = ExtResource("1_lbmb8")
 
 [node name="low_income_animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(20, -54.125)
-scale = Vector2(2.47368, 2.48333)
+position = Vector2(3, -102)
+scale = Vector2(4.295, 4)
 sprite_frames = SubResource("SpriteFrames_afyh3")
 animation = &"bad_rev"
 autoplay = "bad_rev"

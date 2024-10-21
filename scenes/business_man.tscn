@@ -167,6 +167,7 @@ radius = 28.1845
 height = 99.2896
 
 [node name="businessMan" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_cm7y0")
 
 [node name="Shadow" type="Sprite2D" parent="."]

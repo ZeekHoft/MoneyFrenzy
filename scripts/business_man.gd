@@ -35,8 +35,17 @@ func _physics_process(delta):
 	if overlapping_mobs.size() > 0:
 		business_repuation -= DAMAGE_REP * overlapping_mobs.size() * delta
 		bar_revenue.value = business_repuation
+		const STEAL_INCOME = preload("res://scenes/minus_reputation.tscn")
+		var steal_income= STEAL_INCOME.instantiate()
+		add_child(steal_income)
+		
+		
+		print("ugh")
 		if business_repuation <= 0.0:
 			ruined_reputation.emit()
+			
+				
+			
 
 
 # Method to get the current player direction

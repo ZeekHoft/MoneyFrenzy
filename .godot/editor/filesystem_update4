@@ -10,3 +10,8 @@ res://mob.gd
 res://scenes/random_images.tscn
 res://scripts/business_man.gd
 res://scripts/mob1.gd
+res://item scenes/chair.tscn
+res://scenes/tree.tscn
+res://scripts/main_game.gd
+res://scenes/minus_reputation.tscn
+res://scripts/minus_reputation.gd
