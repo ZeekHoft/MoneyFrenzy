@@ -1,20 +1,13 @@
-res://scenes/mob.tscn
-res://mob.gd
 res://scenes/game.tscn
 res://scenes/document.tscn
 res://scenes/cash.tscn
 res://scenes/business_man.tscn
-res://scenes/mob1.tscn
-res://scenes/low_incom.tscn
-res://scenes/minus_reputation.tscn
-res://scripts/business_man.gd
-res://scripts/main_game.gd
-res://scripts/cash.gd
-res://scripts/document.gd
-res://scripts/mob1.gd
-res://scenes/loanded.tscn
-res://scripts/loanded.gd
-res://scripts/sfx_loanded.gd
 res://scenes/items.tscn
-res://scripts/items.gd
+res://scenes/mob.tscn
+res://scenes/mob1.tscn
 res://scripts/game rev.gd
+res://scripts/main_game.gd
+res://scripts/business_man.gd
+res://scripts/items.gd
+res://mob.gd
+res://scripts/global_var.gd

@@ -442,14 +442,14 @@ autostart = true
 [node name="game_rev" type="Control" parent="score"]
 unique_name_in_owner = true
 layout_mode = 3
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 1162.0
-offset_top = -155.0
-offset_right = 1162.0
-offset_bottom = -155.0
-grow_vertical = 0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1166.0
+offset_top = 170.0
+offset_right = 1166.0
+offset_bottom = 170.0
+grow_vertical = 2
 script = ExtResource("2_sw3fg")
 
 [node name="income" type="Label" parent="score/game_rev"]
@@ -467,15 +467,19 @@ theme_override_colors/font_color = Color(0.176471, 0.443137, 0.74902, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Gained Income: 300"
+text = "Gained Income: 0"
 
 [node name="bank rev" type="Label" parent="score/game_rev"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = -1134.0
-offset_top = -397.0
-offset_right = -839.0
-offset_bottom = -357.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -1131.0
+offset_top = -395.0
+offset_right = -836.0
+offset_bottom = -355.0
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.176471, 0.443137, 0.74902, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
@@ -529,19 +533,33 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.545511, 0.232003, 0.161918, 1)
+color = Color(0.545098, 0.231373, 0.160784, 0.654902)
 
-[node name="Label" type="Label" parent="gameover/ColorRect2"]
+[node name="Control" type="Control" parent="gameover/ColorRect2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -314.0
-offset_top = -128.0
-offset_right = 323.0
-offset_bottom = -48.0
+offset_left = -574.0
+offset_top = -337.0
+offset_right = -534.0
+offset_bottom = -297.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="gameover/ColorRect2/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 242.0
+offset_top = 176.0
+offset_right = 879.0
+offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.1783, 0.443783, 0.749999, 1)
@@ -551,7 +569,7 @@ theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 80
 text = "Bankrupt Game Over"
 
-[node name="score_display" type="Label" parent="gameover/ColorRect2"]
+[node name="score_display" type="Label" parent="gameover/ColorRect2/Control"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 273.0
@@ -564,7 +582,7 @@ theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
 text = "Final Score: "
 
-[node name="lost_rev" type="Label" parent="gameover/ColorRect2"]
+[node name="lost_rev" type="Label" parent="gameover/ColorRect2/Control"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -572,10 +590,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -303.0
-offset_top = 2.0
-offset_right = -79.0
-offset_bottom = 73.0
+offset_left = 651.0
+offset_top = 253.0
+offset_right = 875.0
+offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.176471, 0.443137, 0.74902, 1)
@@ -584,17 +602,17 @@ theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
 text = "Lost Revenue:"
 
-[node name="retart" type="Button" parent="gameover/ColorRect2"]
+[node name="retart" type="Button" parent="gameover/ColorRect2/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -97.0
-offset_top = 111.0
-offset_right = 81.0
-offset_bottom = 165.0
+offset_left = 459.0
+offset_top = 415.0
+offset_right = 637.0
+offset_bottom = 469.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.416636, 0.645464, 0.955695, 1)
@@ -615,4 +633,4 @@ script = ExtResource("15_f3mjs")
 [connection signal="ruined_reputation" from="businessMan" to="." method="_on_business_man_ruined_reputation"]
 [connection signal="timeout" from="mob" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="mob2" to="." method="_on_mob_2_timeout"]
-[connection signal="pressed" from="gameover/ColorRect2/retart" to="." method="_on_retart_pressed"]
+[connection signal="pressed" from="gameover/ColorRect2/Control/retart" to="." method="_on_retart_pressed"]

@@ -79,6 +79,10 @@ run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalVar="*res://scripts/global_var.gd"
+
 [display]
 
 window/stretch/mode="viewport"

@@ -163,8 +163,8 @@ radius = 31.0
 height = 106.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xyxvo"]
-radius = 22.7532
-height = 82.423
+radius = 28.1845
+height = 99.2896
 
 [node name="businessMan" type="CharacterBody2D"]
 scale = Vector2(0.8, 0.8)
@@ -198,7 +198,8 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="reputation_box"]
-position = Vector2(-1.25, -41.6071)
-scale = Vector2(1.316, 1.214)
+visible = false
+position = Vector2(-1.42857, -45.7143)
+scale = Vector2(1.21647, 1.12226)
 shape = SubResource("CapsuleShape2D_xyxvo")
 debug_color = Color(0.688867, 0, 0.118247, 0.42)
