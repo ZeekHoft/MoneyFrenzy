@@ -4,48 +4,67 @@ extends CharacterBody2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var bar_revenue = get_node("/root/Game/score/revenue_bar/rev_bar")
 @onready var income = get_node("/root/Game/score/game_rev")
+@onready var camera = get_node("/root/Game/businessMan/Camera2D")
+
+
+@export var random_shake_strength: float = 20.0
+@export var shake_fade: float = 5.0
+var rng = RandomNumberGenerator.new()
+var shake_strength: float = 0.0
+
+
+
 var player_direction = Vector2.ZERO
 signal ruined_reputation
 
 
+func apply_shake():
+	shake_strength = random_shake_strength
+
+func randomOffset() -> Vector2:
+	return Vector2(rng.randf_range(-shake_strength, shake_strength),rng.randf_range(-shake_strength, shake_strength))
 
 
-var business_repuation_dmg1 = 100.0
+
 
 func _physics_process(delta):
 	player_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-
-	velocity = player_direction * 300
+	velocity = player_direction * GlobalVar.business_man_speed
 	move_and_slide()
 	
 	if velocity.length() > 0.0:
 		animated_sprite_2d.play("run")
 	else:
 		animated_sprite_2d.play("idle")
-
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
 	elif direction < 0:
 		animated_sprite_2d.flip_h = true
-		
-		
+	
+	
+	if shake_strength > 0:
+		shake_strength = lerpf(shake_strength, 0, shake_fade * delta)
+		camera.offset = randomOffset()
+	
 		
 	const DAMAGE_REP = 50
-	
-
 	var overlapping_mobs = %reputation_box.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
 		GlobalVar.business_reputation_health -= DAMAGE_REP * overlapping_mobs.size() * delta
 		bar_revenue.value = GlobalVar.business_reputation_health
+		apply_shake()
 		print(GlobalVar.business_reputation_health)
-		
 		#print("helth222222222: " + str(business_reputation_health))
 		const STEAL_INCOME = preload("res://scenes/minus_reputation.tscn")
 		var steal_income= STEAL_INCOME.instantiate()
 		add_child(steal_income)
 		if GlobalVar.business_reputation_health <= 0.0:
 			ruined_reputation.emit()
+			GlobalVar.business_man_speed = 0
+		
+			
+			
 		
 	
 	

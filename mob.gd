@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var health = 1
+
 @onready var business_man = get_node("/root/Game/businessMan")
 @onready var main = get_node("/root/Game")
 @onready var sfx_loanded = get_node("/root/Game/sfx_loanded")
@@ -16,9 +17,9 @@ var item_scene := preload("res://scenes/items.tscn")
 
 	
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	var mob_direction = global_position.direction_to(business_man.global_position)
-	velocity = mob_direction * 100
+	velocity = mob_direction * GlobalVar.mob_speed
 	animated_sprite_2d.play("running")
 	move_and_slide()
 	
@@ -36,7 +37,10 @@ func _physics_process(delta):
 		animated_sprite_2d.flip_h = false
 	elif global_position.x > business_man.global_position.x:
 		animated_sprite_2d.flip_h = true
-	
+		
+		
+	if GlobalVar.business_reputation_health <= 0.0:
+			GlobalVar.mob_speed = 0
 		
 		
 func take_damage():

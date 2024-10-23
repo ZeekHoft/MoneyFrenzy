@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://66c3xgl4gbyp"]
+
+[ext_resource type="Texture2D" uid="uid://dc47suvbv3hmx" path="res://images/free-office-pixel-art/barrier.png" id="1_n13k2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp02c"]
+size = Vector2(25.741, 7.24064)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65sis"]
+size = Vector2(5.67174, 3.12848)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f33ss"]
+size = Vector2(187, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vflsy"]
+size = Vector2(5, 197)
+
+[node name="barrier" type="StaticBody2D"]
+
+[node name="Barrier" type="Sprite2D" parent="."]
+position = Vector2(241, 58)
+texture = ExtResource("1_n13k2")
+
+[node name="desk1" type="CollisionShape2D" parent="."]
+position = Vector2(167.5, 111.5)
+rotation = -3.14159
+scale = Vector2(6.8762, 8.14845)
+shape = SubResource("RectangleShape2D_hp02c")
+
+[node name="box" type="CollisionShape2D" parent="."]
+position = Vector2(59.5, 128.254)
+rotation = -3.14159
+scale = Vector2(6.8762, 8.14845)
+shape = SubResource("RectangleShape2D_65sis")
+
+[node name="desk2" type="CollisionShape2D" parent="."]
+position = Vector2(354.5, 124.5)
+shape = SubResource("RectangleShape2D_f33ss")
+
+[node name="walls" type="CharacterBody2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="wall left" type="CollisionShape2D" parent="walls"]
+position = Vector2(31.5, 41.5)
+shape = SubResource("RectangleShape2D_vflsy")
+
+[node name="wall right" type="CollisionShape2D" parent="walls"]
+position = Vector2(456, 46)
+shape = SubResource("RectangleShape2D_vflsy")

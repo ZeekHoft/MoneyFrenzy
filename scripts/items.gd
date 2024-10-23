@@ -16,17 +16,17 @@ var textures = [cash, credit, reputation]
 func _ready():
 	$Sprite2D.texture = textures[item_type]
 
-
+var heal = 10.0
 
 func add_health():
-	GlobalVar.business_reputation_health = min(GlobalVar.business_reputation_health + 10, 500.0)
+	GlobalVar.business_reputation_health = min(GlobalVar.business_reputation_health + heal, 500.0)
 	bar_revenue.value = GlobalVar.business_reputation_health
 	
 
 
 	
-func _on_body_entered(body):
-	var heal = 10.0
+func _on_body_entered(_body):
+	
 	if item_type == 0:
 		income.add_rev()
 	if item_type == 1:

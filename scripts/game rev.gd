@@ -11,6 +11,7 @@ var bank_revenue = 300
 
 
 
+
 #the add and minus function are on cash
 
 func add_rev():
@@ -28,11 +29,11 @@ func regain_revenue():
 	bank_revenue += 50
 	display()
 
+#func warning():
+	#if bank_revenue <= 200:
+		#%gameover.visible = true
 
-
-	
 func display():
-	
 	income.text = "Gained Income: " + str(score)
 	lost_rev.text = "Lost Revenue: " + str(bank_revenue)
 	bank_rev.text = "Bank Revenue: " + str(bank_revenue)
@@ -40,5 +41,6 @@ func display():
 	
 	if bank_revenue <= 0:
 		game._on_business_man_ruined_reputation()
+		GlobalVar.shoot = false
 	
 	
