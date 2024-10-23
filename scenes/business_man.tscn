@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://d87r4mywukd7"]
+[gd_scene load_steps=29 format=3 uid="uid://d87r4mywukd7"]
 
 [ext_resource type="Script" path="res://scripts/business_man.gd" id="1_cm7y0"]
 [ext_resource type="Texture2D" uid="uid://b72hwi366h8aq" path="res://images/business_man.png" id="1_lw8bc"]
 [ext_resource type="Texture2D" uid="uid://bgxtjkayof65g" path="res://images/Shadow.png" id="2_mifeh"]
 [ext_resource type="PackedScene" uid="uid://dv7x0ioycxvah" path="res://scenes/document.tscn" id="4_wjqe4"]
+[ext_resource type="AudioStream" uid="uid://0nhav67onhvi" path="res://sfx/hurt1.wav" id="5_win7k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1u72x"]
 atlas = ExtResource("1_lw8bc")
@@ -204,3 +205,6 @@ position = Vector2(-1.25, -41.6071)
 scale = Vector2(1.316, 1.214)
 shape = SubResource("CapsuleShape2D_xyxvo")
 debug_color = Color(0.688867, 0, 0.118247, 0.42)
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_win7k")

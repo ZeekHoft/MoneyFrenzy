@@ -69,7 +69,7 @@ position = Vector2(6, -36)
 scale = Vector2(2.813, 2.891)
 sprite_frames = SubResource("SpriteFrames_d5jly")
 animation = &"running"
-frame_progress = 0.5399
+frame_progress = 0.858971
 
 [node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]
 position = Vector2(0, 2.16667)

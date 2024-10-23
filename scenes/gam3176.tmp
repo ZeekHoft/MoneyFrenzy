@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://5oh61jih13wc"]
+[gd_scene load_steps=20 format=3 uid="uid://5oh61jih13wc"]
 
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_php2n"]
 [ext_resource type="PackedScene" uid="uid://d87r4mywukd7" path="res://scenes/business_man.tscn" id="2_f6q2v"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://c2lll07lf0c1a" path="res://images/drop items/cash.png" id="11_ggk52"]
 [ext_resource type="Texture2D" uid="uid://bl0qt7upivbl5" path="res://images/drop items/credit.png" id="12_dv28e"]
 [ext_resource type="AudioStream" uid="uid://g54m6ifmtu0c" path="res://sfx/bg music.mp3" id="13_40ow8"]
-[ext_resource type="PackedScene" uid="uid://y8mfeaj2v8xm" path="res://item scenes/chair.tscn" id="14_3vwqi"]
 [ext_resource type="AudioStream" uid="uid://dvcmw6gkonejk" path="res://sfx/cusomter_loanded2.mp3" id="14_nr5on"]
 [ext_resource type="Script" path="res://scripts/sfx_loanded.gd" id="15_f3mjs"]
 
@@ -347,21 +346,6 @@ script = ExtResource("15_f3mjs")
 
 [node name="barrier" parent="." instance=ExtResource("3_2gf77")]
 position = Vector2(862, 68)
-
-[node name="chairs" type="Node2D" parent="."]
-position = Vector2(862, 68)
-
-[node name="chair" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(-358, 44)
-
-[node name="chair2" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(-360, 166)
-
-[node name="chair3" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(-358, 273)
-
-[node name="chair4" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(-360, 419)
 
 [connection signal="ruined_reputation" from="businessMan" to="." method="_on_business_man_ruined_reputation"]
 [connection signal="timeout" from="mob" to="." method="_on_timer_timeout"]

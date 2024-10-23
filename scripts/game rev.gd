@@ -8,6 +8,7 @@ var bank_revenue = 300
 @onready var score_display = %score_display
 @onready var bank_rev = %"bank rev"
 @onready var income = %income
+@onready var final_score = %final_score
 
 
 
@@ -34,10 +35,14 @@ func regain_revenue():
 		#%gameover.visible = true
 
 func display():
+	
+	var finalScore_convert = score + bank_revenue
+	var finaScore_converted = str(finalScore_convert)
 	income.text = "Gained Income: " + str(score)
 	lost_rev.text = "Lost Revenue: " + str(bank_revenue)
 	bank_rev.text = "Bank Revenue: " + str(bank_revenue)
-	score_display.text = "Final Score: " + str(score)
+	score_display.text = "Total Income: " + str(score)
+	final_score.text = "Final Score:" + str(finaScore_converted)
 	
 	if bank_revenue <= 0:
 		game._on_business_man_ruined_reputation()

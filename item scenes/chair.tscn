@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bgxtjkayof65g" path="res://images/Shadow.png" id="2_2isge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2syuq"]
-size = Vector2(17, 16)
+size = Vector2(40, 16)
 
 [node name="chair" type="StaticBody2D"]
 
@@ -19,5 +19,5 @@ scale = Vector2(5.125, 2.71875)
 texture = ExtResource("2_2isge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -9)
+position = Vector2(1, -20)
 shape = SubResource("RectangleShape2D_2syuq")
