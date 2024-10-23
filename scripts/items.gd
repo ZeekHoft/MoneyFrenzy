@@ -18,12 +18,13 @@ func _ready():
 
 
 
-
 func add_health():
-	GlobalVar.business_repuation_dmg = min(GlobalVar.business_repuation_dmg + 10, 100.0)
-	bar_revenue.value = GlobalVar.business_repuation_dmg
+	GlobalVar.business_reputation_health = min(GlobalVar.business_reputation_health + 10, 500.0)
+	bar_revenue.value = GlobalVar.business_reputation_health
+	
 
 
+	
 func _on_body_entered(body):
 	var heal = 10.0
 	if item_type == 0:
@@ -33,7 +34,6 @@ func _on_body_entered(body):
 	if item_type == 2:
 		add_health()
 		print(bar_revenue.value)
-		
 	queue_free()
 	
 

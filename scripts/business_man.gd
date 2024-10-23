@@ -36,16 +36,17 @@ func _physics_process(delta):
 
 	var overlapping_mobs = %reputation_box.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
-		GlobalVar.business_repuation_dmg -= DAMAGE_REP * overlapping_mobs.size() * delta
-		bar_revenue.value = GlobalVar.business_repuation_dmg
-		print(GlobalVar.business_repuation_dmg)
+		GlobalVar.business_reputation_health -= DAMAGE_REP * overlapping_mobs.size() * delta
+		bar_revenue.value = GlobalVar.business_reputation_health
+		print(GlobalVar.business_reputation_health)
 		
-		#print("helth222222222: " + str(business_repuation_dmg))
+		#print("helth222222222: " + str(business_reputation_health))
 		const STEAL_INCOME = preload("res://scenes/minus_reputation.tscn")
 		var steal_income= STEAL_INCOME.instantiate()
 		add_child(steal_income)
-		if GlobalVar.business_repuation_dmg <= 0.0:
+		if GlobalVar.business_reputation_health <= 0.0:
 			ruined_reputation.emit()
+		
 	
 	
 
@@ -55,8 +56,8 @@ func get_player_direction():
 	return player_direction
 
 #func get_health():
-	#return business_repuation_dmg
-	#print(business_repuation_dmg)
+	#return business_reputation_health
+	#print(business_reputation_health)
 
 
 

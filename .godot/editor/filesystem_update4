@@ -5,9 +5,9 @@ res://scenes/business_man.tscn
 res://scenes/items.tscn
 res://scenes/mob.tscn
 res://scenes/mob1.tscn
-res://scripts/game rev.gd
-res://scripts/main_game.gd
+res://scenes/add_reputation.tscn
+res://scenes/minus_reputation.tscn
+res://scripts/global_var.gd
 res://scripts/business_man.gd
 res://scripts/items.gd
-res://mob.gd
-res://scripts/global_var.gd
+res://scripts/main_game.gd

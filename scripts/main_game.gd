@@ -5,6 +5,7 @@ extends Node2D
 @onready var score_display = %score_display
 @onready var mob = %mob
 @onready var mob_2 = %mob2
+@onready var path_2d = $Path2D
 
 
 
@@ -21,12 +22,19 @@ func spawn_mob():
 	var new_mob = preload("res://scenes/mob.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()
 	new_mob.global_position = %PathFollow2D.global_position
-	add_child(new_mob)
+	
 
+	add_child(new_mob)
+	
 
 
 
 func _on_timer_timeout():
+	const LOANDED = preload("res://scenes/loanded.tscn")
+	var loanded = LOANDED.instantiate()
+	add_child(loanded)
+	loanded.global_position = path_2d.global_position
+
 	spawn_mob()
 	
 func _on_mob_2_timeout():
@@ -42,7 +50,7 @@ func _on_business_man_ruined_reputation():
 
 func _on_retart_pressed():
 	get_tree().reload_current_scene()
-	GlobalVar.business_repuation_dmg = 100.0
+	GlobalVar.business_reputation_health = GlobalVar.reset_value
 	%mob2.start()
 	%mob.start()
 

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7t54rq4gp40l"]
+
+[ext_resource type="Script" path="res://scripts/add_reputation.gd" id="1_keiv0"]
+[ext_resource type="Texture2D" uid="uid://dqkv4yn2lb3sp" path="res://images/star4.png" id="1_qut32"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jcw0"]
+atlas = ExtResource("1_qut32")
+region = Rect2(0, 0, 75, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wgdnv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jcw0")
+}],
+"loop": true,
+"name": &"add",
+"speed": 5.0
+}]
+
+[node name="add_reputation" type="Node2D"]
+script = ExtResource("1_keiv0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -100)
+sprite_frames = SubResource("SpriteFrames_wgdnv")
+animation = &"add"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

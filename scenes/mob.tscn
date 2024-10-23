@@ -49,8 +49,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdit1"]
-radius = 23.0
-height = 80.0
+radius = 17.6667
+height = 65.1112
 
 [node name="mob" type="CharacterBody2D"]
 collision_layer = 3
@@ -68,7 +68,7 @@ scale = Vector2(0.9137, 0.795247)
 texture = ExtResource("3_s8n3j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.33333, -25.5556)
+position = Vector2(5, -33)
 shape = SubResource("CapsuleShape2D_rdit1")
 
 [node name="BubbleThought" type="Sprite2D" parent="."]
