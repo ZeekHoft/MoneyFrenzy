@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cvr3i6rilk5qq" path="res://images/free-office-pixel-art/Chair.png" id="1_6716w"]
 [ext_resource type="Texture2D" uid="uid://bgxtjkayof65g" path="res://images/Shadow.png" id="2_2isge"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2syuq"]
-size = Vector2(40, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_63p5h"]
+radius = 12.0416
 
 [node name="chair" type="StaticBody2D"]
 
@@ -19,5 +19,5 @@ scale = Vector2(5.125, 2.71875)
 texture = ExtResource("2_2isge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -20)
-shape = SubResource("RectangleShape2D_2syuq")
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_63p5h")

@@ -6,8 +6,7 @@ extends CharacterBody2D
 @onready var income = get_node("/root/Game/score/game_rev")
 @onready var camera = get_node("/root/Game/businessMan/Camera2D")
 @onready var low_reputation = get_node("/root/Game/low_reputation")
-@onready var hurt = $hurt
-
+@onready var sfx_dmg = get_node("/root/Game/sfx_dmg")
 
 @export var random_shake_strength: float = 20.0
 @export var shake_fade: float = 5.0
@@ -21,9 +20,8 @@ signal ruined_reputation
 
 
 func apply_shake():
-	
 	shake_strength = random_shake_strength
-	hurt.play()
+
 
 	
 
@@ -36,7 +34,9 @@ func randomOffset() -> Vector2:
 func _physics_process(delta):
 	player_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = player_direction * GlobalVar.business_man_speed
+	print(GlobalVar.business_man_speed)
 	move_and_slide()
+	
 	
 	if velocity.length() > 0.0:
 		animated_sprite_2d.play("run")
@@ -58,6 +58,7 @@ func _physics_process(delta):
 	const DAMAGE_REP = 50
 	var overlapping_mobs = %reputation_box.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
+		sfx_dmg.play()
 		GlobalVar.business_reputation_health -= DAMAGE_REP * overlapping_mobs.size() * delta
 		
 		bar_revenue.value = GlobalVar.business_reputation_health
@@ -72,8 +73,12 @@ func _physics_process(delta):
 		var steal_income= STEAL_INCOME.instantiate()
 		add_child(steal_income)
 		
-		if GlobalVar.business_reputation_health <= 40:
+		if GlobalVar.business_reputation_health < 50:
 			low_reputation.visible = true
+		if GlobalVar.business_reputation_health > 50:
+			low_reputation.visible = false
+			
+			
 		if GlobalVar.business_reputation_health <= 0.0:
 			ruined_reputation.emit()
 			GlobalVar.business_man_speed = 0

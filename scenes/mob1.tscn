@@ -9,48 +9,36 @@
 [ext_resource type="Texture2D" uid="uid://clvt7tthx2hal" path="res://images/progress bar/border2.png" id="7_25hty"]
 [ext_resource type="Texture2D" uid="uid://dscx4kbmdg3dk" path="res://images/progress bar/inner.png" id="8_lt8ol"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_67m02"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg833"]
 atlas = ExtResource("2_85tit")
 region = Rect2(0, 125, 32, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0myww"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0exac"]
 atlas = ExtResource("2_85tit")
 region = Rect2(32, 125, 32, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_307dv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejc8v"]
 atlas = ExtResource("2_85tit")
 region = Rect2(64, 125, 32, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mhulh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t17q"]
 atlas = ExtResource("2_85tit")
 region = Rect2(96, 125, 32, 25)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_d5jly"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_5dcur"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_67m02")
+"texture": SubResource("AtlasTexture_pg833")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0myww")
+"texture": SubResource("AtlasTexture_0exac")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_307dv")
+"texture": SubResource("AtlasTexture_ejc8v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mhulh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_67m02")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0myww")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_307dv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mhulh")
+"texture": SubResource("AtlasTexture_0t17q")
 }],
 "loop": true,
 "name": &"running",
@@ -64,7 +52,7 @@ height = 40.0
 position = Vector2(-6, -2)
 scale = Vector2(2.30245, 2.21292)
 collision_layer = 3
-collision_mask = 9
+collision_mask = 11
 script = ExtResource("1_xbjam")
 
 [node name="Shadow" type="Sprite2D" parent="."]
@@ -73,18 +61,17 @@ scale = Vector2(2.57024, 2.29906)
 texture = ExtResource("3_dggxp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(6, -36)
-scale = Vector2(2.813, 2.891)
-sprite_frames = SubResource("SpriteFrames_d5jly")
+position = Vector2(6.08048, -37.9589)
+scale = Vector2(2.85945, 3.17369)
+sprite_frames = SubResource("SpriteFrames_5dcur")
 animation = &"running"
-frame_progress = 0.858971
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, -19)
 shape = SubResource("CapsuleShape2D_rdit1")
 
 [node name="BubbleThought" type="Sprite2D" parent="."]
-position = Vector2(29.1346, -58.2778)
+position = Vector2(26.0592, -54.227)
 scale = Vector2(0.234646, 0.352487)
 texture = ExtResource("4_6ir4e")
 
@@ -93,10 +80,10 @@ position = Vector2(-1.88642, -55.6164)
 scale = Vector2(1.08047, 0.775844)
 
 [node name="anger2_meter" type="TextureProgressBar" parent="."]
-offset_left = -23.019
-offset_top = -49.7081
-offset_right = 16.981
-offset_bottom = 50.2919
+offset_left = -26.0592
+offset_top = -42.4778
+offset_right = 13.9408
+offset_bottom = 57.5222
 scale = Vector2(0.282097, 0.390265)
 max_value = 1000.0
 fill_mode = 3

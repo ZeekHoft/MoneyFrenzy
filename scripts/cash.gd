@@ -2,7 +2,7 @@ extends Area2D
 
 
 @onready var cash = get_node("/root/Game/score/game_rev")
-
+@onready var sfx_dmg = get_node("/root/Game/sfx_dmg")
 
 
 var travelled_distance = 0
@@ -17,6 +17,7 @@ func _physics_process(delta):
 	
 	travelled_distance += MONEY_SPEED * delta
 	if travelled_distance > RANGE:
+		sfx_dmg.play()
 		queue_free()
 		cash.minus_rev()
 		const LOW_INCOME = preload("res://scenes/low_incom.tscn")

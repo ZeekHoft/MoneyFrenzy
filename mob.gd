@@ -32,7 +32,7 @@ func _physics_process(_delta):
 		#if i % 1000 == 0:
 			#speed += 1
 	##print(speed)
-	var player_direction = business_man.get_player_direction()
+	var _player_direction = business_man.get_player_direction()
 	#global_position.x is the mob then the other one is the x position of the player
 	if global_position.x < business_man.global_position.x:
 		animated_sprite_2d.flip_h = false
@@ -48,7 +48,7 @@ func _physics_process(_delta):
 		
 func take_damage():
 	health -= 1
-	GlobalVar.mob_speed += 10
+	GlobalVar.mob_speed += 5
 	
 	if health == 0:
 		sfx_loanded.playsfx()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpae8hnkmbrdv"
-path="res://.godot/imported/wall.png-ce051534059a7c2f4440dc53dfc3a030.ctex"
+uid="uid://dxqbbheoqx7yx"
+path="res://.godot/imported/the lOAN LEGACY.png-854ddef0b277d56069b03d2da7da89f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Office tiles/wall.png"
-dest_files=["res://.godot/imported/wall.png-ce051534059a7c2f4440dc53dfc3a030.ctex"]
+source_file="res://images/the lOAN LEGACY.png"
+dest_files=["res://.godot/imported/the lOAN LEGACY.png-854ddef0b277d56069b03d2da7da89f4.ctex"]
 
 [params]
 

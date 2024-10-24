@@ -1,0 +1,92 @@
+[gd_scene load_steps=15 format=3 uid="uid://cp1dd8q10vt88"]
+
+[ext_resource type="Script" path="res://scripts/mob_2.gd" id="1_ocm6d"]
+[ext_resource type="Texture2D" uid="uid://bgxtjkayof65g" path="res://images/Shadow.png" id="2_1btvy"]
+[ext_resource type="Texture2D" uid="uid://cgap4f15odmbb" path="res://images/free-office-pixel-art/Julia_walk_Rigth.png" id="3_w61d4"]
+[ext_resource type="Texture2D" uid="uid://drn1kf7lkr0e3" path="res://images/bubble_thought.png" id="4_scxxw"]
+[ext_resource type="PackedScene" uid="uid://b20yp6d1wkslj" path="res://scenes/random_images.tscn" id="5_e3frt"]
+[ext_resource type="Texture2D" uid="uid://dw2u841eqs5ua" path="res://images/progress bar/back inner.png" id="6_q1mo2"]
+[ext_resource type="Texture2D" uid="uid://clvt7tthx2hal" path="res://images/progress bar/border2.png" id="7_ogdtv"]
+[ext_resource type="Texture2D" uid="uid://dscx4kbmdg3dk" path="res://images/progress bar/inner.png" id="8_xuf78"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hdiy"]
+atlas = ExtResource("3_w61d4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gkyb"]
+atlas = ExtResource("3_w61d4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ci6l"]
+atlas = ExtResource("3_w61d4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inlv3"]
+atlas = ExtResource("3_w61d4")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5jly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hdiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gkyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ci6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inlv3")
+}],
+"loop": true,
+"name": &"running",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdit1"]
+height = 40.0
+
+[node name="mob2" type="CharacterBody2D"]
+position = Vector2(-6, -2)
+scale = Vector2(2.30245, 2.21292)
+collision_layer = 3
+script = ExtResource("1_ocm6d")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(5.64616, -15.3643)
+scale = Vector2(2.57024, 2.29906)
+texture = ExtResource("2_1btvy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6.94912, -21.6908)
+scale = Vector2(1.41081, 1.41489)
+sprite_frames = SubResource("SpriteFrames_d5jly")
+animation = &"running"
+frame_progress = 0.858971
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -19)
+shape = SubResource("CapsuleShape2D_rdit1")
+
+[node name="BubbleThought" type="Sprite2D" parent="."]
+position = Vector2(33.4426, -46.5448)
+scale = Vector2(0.234646, 0.352487)
+texture = ExtResource("4_scxxw")
+
+[node name="random_images" parent="BubbleThought" instance=ExtResource("5_e3frt")]
+position = Vector2(-1.88642, -55.6164)
+scale = Vector2(1.08047, 0.775844)
+
+[node name="anger3_meter" type="TextureProgressBar" parent="."]
+offset_left = -22.5846
+offset_top = -46.9967
+offset_right = 17.4154
+offset_bottom = 53.0033
+scale = Vector2(0.282097, 0.390265)
+max_value = 1000.0
+fill_mode = 3
+texture_under = ExtResource("6_q1mo2")
+texture_over = ExtResource("7_ogdtv")
+texture_progress = ExtResource("8_xuf78")

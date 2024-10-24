@@ -20,11 +20,12 @@ var item_scene := preload("res://scenes/items.tscn")
 	
 func _physics_process(_delta):
 	anger_2_meter.value = GlobalVar.mob1_speed
+	
 	#print(anger_2_meter.value)
 	
 	
 	var mob_direction = global_position.direction_to(business_man.global_position)
-	velocity = mob_direction * GlobalVar.mob1_speed
+	velocity = mob_direction * GlobalVar.mob1_speed 
 	animated_sprite_2d.play("running")
 	move_and_slide()
 

@@ -1,14 +1,13 @@
 res://scenes/game.tscn
-res://scenes/mob.tscn
 res://scenes/document.tscn
 res://scenes/cash.tscn
 res://item scenes/chair.tscn
 res://scenes/business_man.tscn
+res://scenes/mob.tscn
 res://scenes/mob1.tscn
+res://scenes/mob_2.tscn
 res://scenes/items.tscn
 res://scenes/barrier.tscn
-res://scenes/tree.tscn
-res://scripts/mob1.gd
-res://mob.gd
+res://scenes/low_incom.tscn
 res://scripts/game rev.gd
-res://scripts/items.gd
+res://scripts/business_man.gd

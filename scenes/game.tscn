@@ -1,19 +1,23 @@
-[gd_scene load_steps=24 format=3 uid="uid://5oh61jih13wc"]
+[gd_scene load_steps=30 format=3 uid="uid://5oh61jih13wc"]
 
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_php2n"]
 [ext_resource type="PackedScene" uid="uid://d87r4mywukd7" path="res://scenes/business_man.tscn" id="2_f6q2v"]
 [ext_resource type="Script" path="res://scripts/game rev.gd" id="2_sw3fg"]
 [ext_resource type="PackedScene" uid="uid://66c3xgl4gbyp" path="res://scenes/barrier.tscn" id="3_2gf77"]
-[ext_resource type="Texture2D" uid="uid://bpae8hnkmbrdv" path="res://images/Office tiles/wall.png" id="3_qrumk"]
-[ext_resource type="FontFile" uid="uid://dn83ka64k1cdl" path="res://fonts/ice_pixel-7.ttf" id="5_tqybu"]
+[ext_resource type="Texture2D" uid="uid://ldrri486q4jn" path="res://images/Office tiles/carpet2.png" id="3_4my3t"]
+[ext_resource type="Texture2D" uid="uid://bv7lq2pfj8kvn" path="res://images/Office tiles/walls.png" id="3_7vov4"]
+[ext_resource type="Texture2D" uid="uid://dafxbtx7jevip" path="res://images/Office tiles/carpet.png" id="3_qrumk"]
 [ext_resource type="FontFile" uid="uid://wlqf2n0u7ft7" path="res://fonts/neon_pixel-7.ttf" id="8_vg7ry"]
+[ext_resource type="Texture2D" uid="uid://dxqbbheoqx7yx" path="res://images/the lOAN LEGACY.png" id="11_8k6vw"]
 [ext_resource type="Texture2D" uid="uid://tc244p4bconf" path="res://images/star3.png" id="11_fft3b"]
 [ext_resource type="Texture2D" uid="uid://c2lll07lf0c1a" path="res://images/drop items/cash.png" id="11_ggk52"]
 [ext_resource type="Texture2D" uid="uid://bl0qt7upivbl5" path="res://images/drop items/credit.png" id="12_dv28e"]
 [ext_resource type="AudioStream" uid="uid://g54m6ifmtu0c" path="res://sfx/bg music.mp3" id="13_40ow8"]
+[ext_resource type="AudioStream" uid="uid://rni4mnn07knl" path="res://sfx/pickup1.mp3" id="13_bx2ab"]
 [ext_resource type="PackedScene" uid="uid://y8mfeaj2v8xm" path="res://item scenes/chair.tscn" id="14_3vwqi"]
 [ext_resource type="AudioStream" uid="uid://dvcmw6gkonejk" path="res://sfx/cusomter_loanded2.mp3" id="14_nr5on"]
 [ext_resource type="Script" path="res://scripts/sfx_loanded.gd" id="15_f3mjs"]
+[ext_resource type="AudioStream" uid="uid://djxqjm5n87eis" path="res://sfx/hurt2.wav" id="17_84p87"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kg722"]
 texture = ExtResource("3_qrumk")
@@ -35,9 +39,69 @@ texture_region_size = Vector2i(17, 16)
 8:9/size_in_atlas = Vector2i(3, 3)
 8:9/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4qhxk"]
+texture = ExtResource("3_7vov4")
+margins = Vector2i(14, 9)
+texture_region_size = Vector2i(34, 16)
+1:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+1:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+1:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+1:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+1:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+1:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+1:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+1:16/0 = 0
+5:16/0 = 0
+7:16/0 = 0
+1:17/0 = 0
+5:17/0 = 0
+7:17/0 = 0
+1:18/0 = 0
+5:18/0 = 0
+7:18/0 = 0
+1:19/0 = 0
+2:19/0 = 0
+0:18/0 = 0
+0:17/0 = 0
+2:9/0 = 0
+2:16/0 = 0
+2:17/0 = 0
+2:18/0 = 0
+3:9/size_in_atlas = Vector2i(2, 4)
+3:9/0 = 0
+2:10/size_in_atlas = Vector2i(1, 6)
+2:10/0 = 0
+3:16/size_in_atlas = Vector2i(2, 4)
+3:16/0 = 0
+5:19/0 = 0
+7:11/size_in_atlas = Vector2i(1, 5)
+7:11/0 = 0
+10:11/size_in_atlas = Vector2i(1, 4)
+10:11/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_g5mrb"]
 tile_size = Vector2i(51, 16)
 sources/0 = SubResource("TileSetAtlasSource_kg722")
+sources/1 = SubResource("TileSetAtlasSource_4qhxk")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nq5wl"]
 size = Vector2(2083.75, 20)
@@ -47,9 +111,9 @@ size = Vector2(16.5, 995)
 
 [sub_resource type="Curve2D" id="Curve2D_q1rvc"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1553.47, 619.672, 0, 0, 0, 0, 1542.35, 2.05338, 0, 0, 0, 0, 2045.98, 3.06279, 0, 0, 0, 0, 2048, 952, 0, 0, 0, 0, 1.08271, 951.99, 0, 0, 0, 0, -4.95526, 0.0083046, 0, 0, 0, 0, 674.644, 19.4367, 0, 0, 0, 0, 683.746, 611.491, 0, 0, 0, 0, 1553.47, 617.627)
+"points": PackedVector2Array(0, 0, 0, 0, 1581.79, 502.478, 0, 0, 0, 0, 1580.78, 4.09847, 0, 0, 0, 0, 2045.98, 3.06279, 0, 0, 0, 0, 2048, 952, 0, 0, 0, 0, 1022.53, 943.306, 0, 0, 0, 0, 1.08271, 951.99, 0, 0, 0, 0, -4.95526, 0.0083046, 0, 0, 0, 0, 411.704, 16.369, 0, 0, 0, 0, 424.851, 483.028, 0, 0, 0, 0, 1581.79, 494.914)
 }
-point_count = 9
+point_count = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7avl"]
 bg_color = Color(0.836489, 0.630693, 0.0814734, 1)
@@ -63,9 +127,10 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1cn3y"]
+
 [sub_resource type="Animation" id="Animation_bv7fe"]
 resource_name = "transition"
-length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -92,28 +157,62 @@ script = ExtResource("1_php2n")
 metadata/_edit_vertical_guides_ = [-160.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -19.0
-offset_right = 53.0
-offset_bottom = 60.0
+offset_left = -34.0
+offset_right = 31.0
+offset_bottom = 52.0
 scale = Vector2(33.2294, 19.4901)
 color = Color(0.534102, 0.478217, 0.384935, 1)
 
 [node name="walls" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_g5mrb")
 format = 2
-layer_0/tile_data = PackedInt32Array(-65535, 196608, 9, -65536, 196608, 9, -65534, 196608, 9, -65533, 196608, 9, -65532, 196608, 9, -65531, 196608, 9, -65530, 196608, 9, -65529, 196608, 9, -65528, 196608, 9, -65527, 196608, 9, -65526, 196608, 9, -65525, 196608, 9, -65524, 196608, 9, -65523, 196608, 9, -65522, 196608, 9, -65521, 196608, 9, -65520, 196608, 9, -65519, 196608, 9, -65518, 196608, 9, -65517, 196608, 9, -65516, 196608, 9, -65515, 196608, 9, -65514, 196608, 9, -65513, 196608, 9, -65512, 196608, 9, -65511, 196608, 9, -65510, 196608, 9, -65509, 196608, 9, -65508, 196608, 9, -65507, 196608, 9, -65506, 196608, 9, -65505, 196608, 9, -65504, 196608, 9, -65503, 196608, 9, -65502, 196608, 9, -65501, 196608, 9, -65500, 196608, 9, -65499, 196608, 9, -65498, 196608, 9, -65497, 196608, 9, -65496, 196608, 9, -65495, 196608, 9, -1, 196608, 9, 65535, 131072, 10, 131071, 131072, 10, 196607, 131072, 10, 262143, 131072, 10, 327679, 131072, 10, 393215, 131072, 10, 458751, 131072, 10, 524287, 131072, 10, 589823, 131072, 10, 655359, 131072, 10, 720895, 131072, 10, 786431, 131072, 10, 851967, 131072, 10, 917503, 131072, 10, 983039, 131072, 10, 1048575, 131072, 10, 1114111, 131072, 10, 1179647, 131072, 10, 1245183, 131072, 10, 1310719, 131072, 10, 1376255, 131072, 10, 1441791, 131072, 10, 1507327, 131072, 10, 1572863, 131072, 10, 1638399, 131072, 10, 1703935, 131072, 10, 1769471, 131072, 10, 1835007, 131072, 10, 1900543, 131072, 10, 1966079, 131072, 10, 2031615, 131072, 10, 2097151, 131072, 10, 2162687, 131072, 10, 2228223, 131072, 10, 2293759, 131072, 10, 2359295, 131072, 10, 2424831, 131072, 10, 2490367, 131072, 10, 2555903, 131072, 10, 2621439, 131072, 10, 2686975, 131072, 10, 2752511, 131072, 10, 2818047, 131072, 10, 2883583, 131072, 10, 2949119, 131072, 10, 3014655, 131072, 10, 3080191, 131072, 10, 3145727, 131072, 10, 3211263, 131072, 10, 3276799, 131072, 10, 3342335, 131072, 10, 3407871, 131072, 10, 3473407, 131072, 10, 3538943, 131072, 10, 3604479, 131072, 10, 3670015, 131072, 10, 3735551, 131072, 10, 3801087, 131072, 10, 3866623, 131072, 10, 3932159, 131072, 10, 3997695, 131072, 10, 4063231, 196608, 13, 3932200, 393216, 10, 3866664, 393216, 10, 3801128, 393216, 10, 3735592, 393216, 10, 3670056, 393216, 10, 3604520, 393216, 10, 3538984, 393216, 10, 3473448, 393216, 10, 3407912, 393216, 10, 3342376, 393216, 10, 3276840, 393216, 10, 3211304, 393216, 10, 3145768, 393216, 10, 3080232, 393216, 10, 3014696, 393216, 10, 2949160, 393216, 10, 2883624, 393216, 10, 2818088, 393216, 10, 2752552, 393216, 10, 2687016, 393216, 10, 2621480, 393216, 10, 2555944, 393216, 10, 2490408, 393216, 10, 2424872, 393216, 10, 2359336, 393216, 10, 2293800, 393216, 10, 2228264, 393216, 10, 2162728, 393216, 10, 2097192, 393216, 10, 2031656, 393216, 10, 1966120, 393216, 10, 1900584, 393216, 10, 1835048, 393216, 10, 1769512, 393216, 10, 1703976, 393216, 10, 1638440, 393216, 10, 1572904, 393216, 10, 1507368, 393216, 10, 1441832, 393216, 10, 1376296, 393216, 10, 1310760, 393216, 10, 1114152, 393216, 10, 1048616, 393216, 10, 983080, 393216, 10, 917544, 393216, 10, 852008, 393216, 10, 786472, 393216, 10, 720936, 393216, 10, 655400, 393216, 10, 589864, 393216, 10, 524328, 393216, 10, 458792, 393216, 10, 393256, 393216, 10, 327720, 393216, 10, 262184, 393216, 10, 196648, 393216, 10, 131112, 393216, 10, 65576, 393216, 10, 40, 393216, 10, 3997736, 196608, 13, 3997735, 196608, 13, 3997734, 196608, 13, 3997733, 196608, 13, 3997732, 196608, 13, 3997731, 196608, 13, 3997730, 196608, 13, 3997729, 196608, 13, 3997728, 196608, 13, 3997727, 196608, 13, 3997726, 196608, 13, 3997725, 196608, 13, 3997724, 196608, 13, 3997723, 196608, 13, 3997722, 196608, 13, 3997721, 196608, 13, 3997720, 196608, 13, 3997719, 196608, 13, 3997718, 196608, 13, 3997717, 196608, 13, 3997716, 196608, 13, 3997715, 196608, 13, 3997714, 196608, 13, 3997713, 196608, 13, 3997712, 196608, 13, 3997711, 196608, 13, 3997710, 196608, 13, 3997709, 196608, 13, 3997708, 196608, 13, 3997707, 196608, 13, 3997706, 196608, 13, 3997705, 196608, 13, 3997704, 196608, 13, 3997703, 196608, 13, 3997702, 196608, 13, 3997701, 196608, 13, 3997700, 196608, 13, 3997699, 196608, 13, 3997698, 196608, 13, 3997697, 196608, 13, 3997696, 196608, 13)
+layer_0/tile_data = PackedInt32Array(-131072, 196609, 9, -131071, 196609, 9, -131070, 196609, 9, -131069, 196609, 9, -131068, 196609, 9, -131067, 196609, 9, -131066, 196609, 9, -131065, 196609, 9, -131064, 196609, 9, -131063, 196609, 9, -131062, 196609, 9, -131061, 196609, 9, -131060, 196609, 9, -131059, 196609, 9, -131058, 196609, 9, -131057, 196609, 9, -131056, 196609, 9, -131055, 196609, 9, -131054, 196609, 9, -131053, 196609, 9, -131052, 196609, 9, -131051, 196609, 9, -131050, 196609, 9, -131049, 196609, 9, -131048, 196609, 9, -131047, 196609, 9, -131046, 196609, 9, -131045, 196609, 9, -131044, 196609, 9, -131043, 196609, 9, -131042, 196609, 9, -131041, 196609, 9, -131040, 196609, 9, -131039, 196609, 9, -131038, 196609, 9, -131037, 196609, 9, -131036, 196609, 9, -131035, 196609, 9, -131034, 196609, 9, -131033, 196609, 9, -131032, 196609, 9, 3866664, 196609, 9, 3866663, 196609, 9, 3866662, 196609, 9, 3866661, 196609, 9, 3866660, 196609, 9, 3866659, 196609, 9, 3866658, 196609, 9, 3866657, 196609, 9, 3866656, 196609, 9, 3866655, 196609, 9, 3866654, 196609, 9, 3866653, 196609, 9, 3866652, 196609, 9, 3866651, 196609, 9, 3866650, 196609, 9, 3866649, 196609, 9, 3866648, 196609, 9, 3866647, 196609, 9, 3866646, 196609, 9, 3866645, 196609, 9, 3866644, 196609, 9, 3866643, 196609, 9, 3866642, 196609, 9, 3866641, 196609, 9, 3866640, 196609, 9, 3866639, 196609, 9, 3866638, 196609, 9, 3866637, 196609, 9, 3866636, 196609, 9, 3866635, 196609, 9, 3866634, 196609, 9, 3866633, 196609, 9, 3866632, 196609, 9, 3866631, 196609, 9, 3866630, 196609, 9, 3866629, 196609, 9, 3866628, 196609, 9, 3866627, 196609, 9, 3866626, 196609, 9, 3866625, 196609, 9, 3866624, 196609, 9, 3932159, 196609, 9, 3670015, 131073, 805306378, 3276799, 131073, 805306378, 2883583, 131073, 805306378, 2490367, 131073, 805306378, 2097151, 131073, 805306378, 1703935, 131073, 805306378, 1310719, 131073, 805306378, 917503, 131073, 805306378, 524287, 131073, 805306378, 131071, 131073, 805306378, -65537, 196609, 9, 40, 131073, 10, 393256, 131073, 10, 786472, 131073, 10, 1179688, 131073, 10, 1572904, 131073, 10, 1966120, 131073, 10, 2359336, 131073, 10, 2752552, 131073, 10, 3145768, 131073, 10, 3538984, 131073, 10)
+
+[node name="flooring" type="Node2D" parent="."]
+
+[node name="Carpet2" type="Sprite2D" parent="flooring"]
+position = Vector2(1008, 359)
+scale = Vector2(1.652, 1.312)
+texture = ExtResource("3_4my3t")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
 [node name="businessMan" parent="." instance=ExtResource("2_f6q2v")]
-position = Vector2(1123, 130)
+position = Vector2(1019, 135)
 
 [node name="Camera2D" type="Camera2D" parent="businessMan"]
 limit_left = -25
 limit_top = -25
 limit_right = 2066
 limit_bottom = 980
+
+[node name="chairs" type="Node2D" parent="."]
+position = Vector2(862, 68)
+
+[node name="chair" parent="chairs" instance=ExtResource("14_3vwqi")]
+position = Vector2(-181, 361)
+
+[node name="chair2" parent="chairs" instance=ExtResource("14_3vwqi")]
+position = Vector2(40, 362)
+
+[node name="chair3" parent="chairs" instance=ExtResource("14_3vwqi")]
+position = Vector2(266, 362)
+
+[node name="chair5" parent="chairs" instance=ExtResource("14_3vwqi")]
+position = Vector2(-189, 608)
+
+[node name="chair9" parent="chairs" instance=ExtResource("14_3vwqi")]
+position = Vector2(488, 607)
+
+[node name="chair8" parent="chairs" instance=ExtResource("14_3vwqi")]
+position = Vector2(267, 605)
+
+[node name="chair6" parent="chairs" instance=ExtResource("14_3vwqi")]
+position = Vector2(44, 607)
+
+[node name="chair7" parent="chairs" instance=ExtResource("14_3vwqi")]
+position = Vector2(481, 361)
 
 [node name="borders" type="StaticBody2D" parent="."]
 
@@ -126,7 +225,7 @@ position = Vector2(-19.25, 483.5)
 shape = SubResource("RectangleShape2D_yierd")
 
 [node name="bottom" type="CollisionShape2D" parent="borders"]
-position = Vector2(1022, 979)
+position = Vector2(1023, 935)
 shape = SubResource("RectangleShape2D_nq5wl")
 
 [node name="right" type="CollisionShape2D" parent="borders"]
@@ -134,14 +233,14 @@ position = Vector2(2067, 488)
 shape = SubResource("RectangleShape2D_yierd")
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(15.8999, 17.9919)
-scale = Vector2(0.988818, 0.97795)
+position = Vector2(15.8999, 17.9923)
+scale = Vector2(0.988818, 0.925428)
 curve = SubResource("Curve2D_q1rvc")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
-position = Vector2(1553.47, 619.672)
-rotation = -1.5888
+position = Vector2(1581.79, 502.478)
+rotation = -1.57282
 
 [node name="mob" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -151,7 +250,19 @@ autostart = true
 unique_name_in_owner = true
 autostart = true
 
+[node name="mob3" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
 [node name="score" type="CanvasLayer" parent="."]
+
+[node name="pause" type="Button" parent="score"]
+offset_left = 1088.0
+offset_top = 20.0
+offset_right = 1141.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 22
+text = "II"
 
 [node name="game_rev" type="Control" parent="score"]
 unique_name_in_owner = true
@@ -174,14 +285,14 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = -1134.0
 offset_top = -435.0
-offset_right = -839.0
-offset_bottom = -380.0
+offset_right = -836.0
+offset_bottom = -395.0
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.176471, 0.443137, 0.74902, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Gained Income: 0 "
+text = "Total Salary: 0 ₱ "
 
 [node name="Cash" type="Sprite2D" parent="score/game_rev/income"]
 position = Vector2(-23, 15)
@@ -199,11 +310,11 @@ offset_top = -395.0
 offset_right = -836.0
 offset_bottom = -355.0
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.176471, 0.443137, 0.74902, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Bank Revenue: 600"
+text = "Bank Loan: 6000 ₱"
 
 [node name="Credit" type="Sprite2D" parent="score/game_rev/bank rev"]
 position = Vector2(-23, 19)
@@ -216,8 +327,8 @@ offset_left = -1133.0
 offset_top = -473.0
 offset_right = -807.0
 offset_bottom = -433.0
-theme_override_colors/font_color = Color(0.176471, 0.443137, 0.74902, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
 text = "Businee Reputation:"
@@ -248,6 +359,7 @@ scale = Vector2(0.319, 0.332)
 texture = ExtResource("11_fft3b")
 
 [node name="low_reputation" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="low_reputation"]
@@ -260,15 +372,16 @@ grow_vertical = 2
 color = Color(0.717647, 0.188235, 0.14902, 0)
 
 [node name="Label" type="Label" parent="low_reputation"]
+material = SubResource("ShaderMaterial_1cn3y")
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -243.0
-offset_top = -188.0
-offset_right = 204.0
-offset_bottom = -125.0
+offset_left = -247.0
+offset_top = -144.0
+offset_right = 200.0
+offset_bottom = -81.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
@@ -301,17 +414,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -165.0
-offset_top = -132.0
-offset_right = 126.0
-offset_bottom = -69.0
+offset_left = -205.0
+offset_top = -68.0
+offset_right = 164.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 62
-text = "Low Revenue!!!"
+text = "Low on loan!!!"
 
 [node name="gameover" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -323,7 +436,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.545098, 0.231373, 0.160784, 1)
+color = Color(0.87451, 0.658824, 0.298039, 1)
+
+[node name="TheLOanLegacy" type="Sprite2D" parent="gameover/ColorRect2"]
+position = Vector2(564, 324.5)
+scale = Vector2(0.427, 0.404375)
+texture = ExtResource("11_8k6vw")
+
+[node name="ColorRect" type="ColorRect" parent="gameover/ColorRect2/TheLOanLegacy"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1326.0
+offset_top = -802.0
+offset_right = -623.0
+offset_bottom = -800.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.333333, 0.333333, 0.333333, 0.501961)
 
 [node name="Control" type="Control" parent="gameover/ColorRect2"]
 layout_mode = 1
@@ -346,14 +476,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 242.0
-offset_top = 176.0
-offset_right = 879.0
-offset_bottom = 256.0
+offset_left = 265.0
+offset_top = 178.0
+offset_right = 902.0
+offset_bottom = 258.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.1783, 0.443783, 0.749999, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 80
@@ -362,15 +492,15 @@ text = "Bankrupt Game Over"
 [node name="score_display" type="Label" parent="gameover/ColorRect2/Control"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 273.0
-offset_top = 279.0
-offset_right = 500.0
-offset_bottom = 319.0
-theme_override_colors/font_color = Color(0.176471, 0.443137, 0.74902, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+offset_left = 224.0
+offset_top = 280.0
+offset_right = 451.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Total Income:"
+text = "Total Salary:"
 
 [node name="lost_rev" type="Label" parent="gameover/ColorRect2/Control"]
 unique_name_in_owner = true
@@ -380,17 +510,45 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 266.0
-offset_top = 311.0
-offset_right = 490.0
-offset_bottom = 382.0
+offset_left = 239.0
+offset_top = 300.0
+offset_right = 463.0
+offset_bottom = 371.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.176471, 0.443137, 0.74902, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Lost Revenue:"
+text = "Lost Loans:"
+
+[node name="final_score" type="Label" parent="gameover/ColorRect2/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 697.0
+offset_top = 280.0
+offset_right = 904.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
+theme_override_fonts/font = ExtResource("8_vg7ry")
+theme_override_font_sizes/font_size = 40
+text = "Final Score:"
+
+[node name="resume" type="Button" parent="gameover/ColorRect2/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 477.0
+offset_top = 494.0
+offset_right = 680.0
+offset_bottom = 544.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.513726, 0.509804, 0.513726, 1)
+theme_override_fonts/font = ExtResource("8_vg7ry")
+theme_override_font_sizes/font_size = 40
+text = "Reusme"
 
 [node name="retart" type="Button" parent="gameover/ColorRect2/Control"]
 layout_mode = 1
@@ -401,49 +559,45 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 459.0
 offset_top = 415.0
-offset_right = 637.0
+offset_right = 661.0
 offset_bottom = 469.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.416636, 0.645464, 0.955695, 1)
-theme_override_fonts/font = ExtResource("5_tqybu")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.513726, 0.509804, 0.513726, 1)
+theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
 text = "Play Again?"
 
-[node name="final_score" type="Label" parent="gameover/ColorRect2/Control"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 661.0
-offset_top = 281.0
-offset_right = 868.0
-offset_bottom = 321.0
-theme_override_colors/font_color = Color(0.176471, 0.443137, 0.74902, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("8_vg7ry")
-theme_override_font_sizes/font_size = 40
-text = "Final Score:"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="sfx_bg" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_40ow8")
 volume_db = 15.0
-pitch_scale = 1.65
 autoplay = true
 
 [node name="sfx_loanded" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("14_nr5on")
-volume_db = 9.0
+volume_db = 5.0
 pitch_scale = 1.08
 script = ExtResource("15_f3mjs")
 
+[node name="sfx_pickup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_bx2ab")
+volume_db = -4.0
+
+[node name="sfx_dmg" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_84p87")
+pitch_scale = 1.24
+
 [node name="barrier" parent="." instance=ExtResource("3_2gf77")]
-position = Vector2(862, 68)
+position = Vector2(768, 62)
 
 [node name="outer" type="ColorRect" parent="."]
-offset_left = 1057.0
-offset_top = -27.0
-offset_right = 1212.0
-offset_bottom = 3.0
+offset_left = 946.0
+offset_top = -25.0
+offset_right = 1101.0
+offset_bottom = 5.0
 color = Color(0, 0, 0, 1)
 
 [node name="inner" type="ColorRect" parent="outer"]
@@ -456,29 +610,18 @@ color = Color(0.564962, 0.564962, 0.564962, 1)
 
 [node name="Label" type="Label" parent="outer/inner"]
 layout_mode = 0
-offset_left = 21.0
-offset_right = 150.0
-offset_bottom = 34.0
+offset_left = 18.0
+offset_top = -2.0
+offset_right = 147.0
+offset_bottom = 32.0
 theme_override_fonts/font = SubResource("FontVariation_kbeyn")
 theme_override_font_sizes/font_size = 28
 text = "Safe Area"
 
-[node name="chairs" type="Node2D" parent="."]
-position = Vector2(862, 68)
-
-[node name="chair" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(-358, 44)
-
-[node name="chair2" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(-360, 166)
-
-[node name="chair3" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(-358, 273)
-
-[node name="chair4" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(-360, 419)
-
 [connection signal="ruined_reputation" from="businessMan" to="." method="_on_business_man_ruined_reputation"]
 [connection signal="timeout" from="mob" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="mob2" to="." method="_on_mob_2_timeout"]
+[connection signal="timeout" from="mob3" to="." method="_on_mob_3_timeout"]
+[connection signal="pressed" from="score/pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="gameover/ColorRect2/Control/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="gameover/ColorRect2/Control/retart" to="." method="_on_retart_pressed"]
