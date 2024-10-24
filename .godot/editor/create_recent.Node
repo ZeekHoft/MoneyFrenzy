@@ -1,3 +1,4 @@
+AudioStreamPlayer2D
 TextureProgressBar
 ProgressBar
 AnimationPlayer
@@ -5,7 +6,6 @@ ColorRect
 Label
 CanvasLayer
 Node2D
-AudioStreamPlayer2D
 CharacterBody2D
 CollisionShape2D
 StaticBody2D

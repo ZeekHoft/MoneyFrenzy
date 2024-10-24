@@ -11,3 +11,4 @@ res://scenes/tree.tscn
 res://scripts/mob1.gd
 res://mob.gd
 res://scripts/game rev.gd
+res://scripts/items.gd

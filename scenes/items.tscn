@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dv1t2skyyb7jl"]
+[gd_scene load_steps=6 format=3 uid="uid://dv1t2skyyb7jl"]
 
 [ext_resource type="Script" path="res://scripts/items.gd" id="1_80qxh"]
 [ext_resource type="Texture2D" uid="uid://c2lll07lf0c1a" path="res://images/drop items/cash.png" id="1_b8fuk"]
 [ext_resource type="Texture2D" uid="uid://bgxtjkayof65g" path="res://images/Shadow.png" id="3_hni2s"]
+[ext_resource type="AudioStream" uid="uid://rni4mnn07knl" path="res://sfx/pickup1.mp3" id="4_d6mq6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hio6e"]
 radius = 21.3776
@@ -25,5 +26,11 @@ texture = ExtResource("3_hni2s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -28)
 shape = SubResource("CircleShape2D_hio6e")
+
+[node name="pickup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_d6mq6")
+volume_db = -3.0
+autoplay = true
+area_mask = 0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
