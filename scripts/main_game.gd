@@ -10,6 +10,7 @@ extends Node2D
 @onready var path_follow_2d = %PathFollow2D
 @onready var resume = %resume
 @onready var gameover = %gameover
+@onready var gameover_label = %gameover_label
 
 
 
@@ -35,6 +36,7 @@ func spawn_mob1():
 	
 
 func spawn_mob():
+	
 	var new_mob = preload("res://scenes/mob.tscn").instantiate()
 	path_follow_2d.progress_ratio = randf()
 	new_mob.global_position = path_follow_2d.global_position
@@ -58,6 +60,7 @@ func _on_mob_3_timeout():
 
 func _on_business_man_ruined_reputation():
 	gameover.visible = true
+	resume.visible = false
 	#GlobalVar.shoot = false
 	GlobalVar.business_man_speed = 0
 	GlobalVar.mob_speed = 0
@@ -87,7 +90,9 @@ func _on_retart_pressed():
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		_on_business_man_ruined_reputation()
+		GlobalVar.shoot = false
 		resume.visible = true
+		gameover_label.visible = false
 		mob.stop()
 		mob_2.stop()
 		mob_3.stop()
@@ -96,6 +101,8 @@ func _process(_delta):
 
 func _on_pause_pressed():
 	_on_business_man_ruined_reputation()
+	gameover_label.visible = false
+	GlobalVar.shoot = false
 	resume.visible = true
 	mob.stop()
 	mob_2.stop()

@@ -11,3 +11,4 @@ res://scenes/barrier.tscn
 res://scenes/low_incom.tscn
 res://scripts/game rev.gd
 res://scripts/business_man.gd
+res://scripts/main_game.gd

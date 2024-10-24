@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var low_reputation = get_node("/root/Game/low_reputation")
 @onready var sfx_dmg = get_node("/root/Game/sfx_dmg")
 
+
 @export var random_shake_strength: float = 20.0
 @export var shake_fade: float = 5.0
 var rng = RandomNumberGenerator.new()
@@ -32,6 +33,12 @@ func randomOffset() -> Vector2:
 
 
 func _physics_process(delta):
+	if GlobalVar.business_reputation_health < 50:
+		low_reputation.visible = true
+	if GlobalVar.business_reputation_health > 50:
+		low_reputation.visible = false
+	
+			
 	player_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = player_direction * GlobalVar.business_man_speed
 	print(GlobalVar.business_man_speed)
@@ -73,11 +80,7 @@ func _physics_process(delta):
 		var steal_income= STEAL_INCOME.instantiate()
 		add_child(steal_income)
 		
-		if GlobalVar.business_reputation_health < 50:
-			low_reputation.visible = true
-		if GlobalVar.business_reputation_health > 50:
-			low_reputation.visible = false
-			
+
 			
 		if GlobalVar.business_reputation_health <= 0.0:
 			ruined_reputation.emit()

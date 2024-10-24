@@ -11,6 +11,8 @@ var bank_revenue = 6000
 @onready var income = %income
 @onready var final_score = %final_score
 @onready var warning = %warning
+@onready var gameover_label = %gameover_label
+@onready var low_reputation = %low_reputation
 
 
 
@@ -42,17 +44,25 @@ func display():
 	var finalScore_convert = score + bank_revenue 
 	var finaScore_converted = str(finalScore_convert)
 	income.text = "Total Salary: " + str(score) + "₱"
-	lost_rev.text = "Lost Loan: " + str(bank_revenue) + "₱"
+	lost_rev.text = "Bank Loan: " + str(bank_revenue) + "₱"
 	bank_rev.text = "Bank Loan: " + str(bank_revenue) + "₱"
 	score_display.text = "Total Salary: " + str(score) + "₱"
-	final_score.text = "Final Revenue:" + str(finaScore_converted) + "₱"
+	final_score.text = "Final Profit:" + str(finaScore_converted) + "₱"
 	
 	if bank_revenue <= 0:
 		game._on_business_man_ruined_reputation()
 		GlobalVar.shoot = false
+		gameover_label.visible = true
 	if bank_revenue <= 3000:
 		warning.visible = true
 	elif bank_revenue > 3000:
 		warning.visible = false
+
+	if GlobalVar.business_reputation_health <= 0:
+		gameover_label.visible = true
+	
+
 		
+	
+	
 	

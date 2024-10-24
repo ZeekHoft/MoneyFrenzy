@@ -502,7 +502,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Total Salary: 0"
+text = "Total Salary:"
 
 [node name="lost_rev" type="Label" parent="gameover/ColorRect2/Control"]
 unique_name_in_owner = true
@@ -512,9 +512,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 210.0
+offset_left = 239.0
 offset_top = 300.0
-offset_right = 519.0
+offset_right = 463.0
 offset_bottom = 371.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -522,7 +522,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Bank Loan: 6000"
+text = "Lost Loans:"
 
 [node name="final_score" type="Label" parent="gameover/ColorRect2/Control"]
 unique_name_in_owner = true
@@ -535,7 +535,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Final Profit: 0"
+text = "Final Score:"
 
 [node name="resume" type="Button" parent="gameover/ColorRect2/Control"]
 unique_name_in_owner = true
