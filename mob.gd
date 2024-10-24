@@ -19,7 +19,7 @@ var item_scene := preload("res://scenes/items.tscn")
 	
 func _physics_process(_delta):
 	anger_meter.value = GlobalVar.mob_speed
-	print(anger_meter.value)
+	#print(anger_meter.value)
 	
 	
 	var mob_direction = global_position.direction_to(business_man.global_position)

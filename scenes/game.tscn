@@ -111,7 +111,7 @@ size = Vector2(16.5, 995)
 
 [sub_resource type="Curve2D" id="Curve2D_q1rvc"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1581.79, 502.478, 0, 0, 0, 0, 1580.78, 4.09847, 0, 0, 0, 0, 2045.98, 3.06279, 0, 0, 0, 0, 2048, 952, 0, 0, 0, 0, 1022.53, 943.306, 0, 0, 0, 0, 1.08271, 951.99, 0, 0, 0, 0, -4.95526, 0.0083046, 0, 0, 0, 0, 411.704, 16.369, 0, 0, 0, 0, 424.851, 483.028, 0, 0, 0, 0, 1581.79, 494.914)
+"points": PackedVector2Array(0, 0, 0, 0, 1538.3, 491.673, 0, 0, 0, 0, 1534.26, 1.0889, 0, 0, 0, 0, 2045.98, 3.06279, 0, 0, 0, 0, 2048, 952, 0, 0, 0, 0, 1022.53, 943.306, 0, 0, 0, 0, 1.08271, 951.99, 0, 0, 0, 0, -4.95526, 0.0083046, 0, 0, 0, 0, 501.71, 14.0559, 0, 0, 0, 0, 499.688, 480.867, 0, 0, 0, 0, 1538.3, 491.673)
 }
 point_count = 10
 
@@ -191,28 +191,28 @@ limit_bottom = 980
 position = Vector2(862, 68)
 
 [node name="chair" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(-181, 361)
+position = Vector2(-402, 356)
 
 [node name="chair2" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(40, 362)
+position = Vector2(-17, 361)
 
 [node name="chair3" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(266, 362)
+position = Vector2(403, 362)
 
 [node name="chair5" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(-189, 608)
+position = Vector2(-408, 606)
 
 [node name="chair9" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(488, 607)
+position = Vector2(675, 611)
 
 [node name="chair8" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(267, 605)
+position = Vector2(411, 620)
 
 [node name="chair6" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(44, 607)
+position = Vector2(-17, 619)
 
 [node name="chair7" parent="chairs" instance=ExtResource("14_3vwqi")]
-position = Vector2(481, 361)
+position = Vector2(673, 368)
 
 [node name="borders" type="StaticBody2D" parent="."]
 
@@ -239,8 +239,8 @@ curve = SubResource("Curve2D_q1rvc")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
-position = Vector2(1581.79, 502.478)
-rotation = -1.57282
+position = Vector2(1538.3, 491.673)
+rotation = -1.57903
 
 [node name="mob" type="Timer" parent="."]
 unique_name_in_owner = true
