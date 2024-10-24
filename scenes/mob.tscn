@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://beoqdp18yive5"]
+[gd_scene load_steps=15 format=3 uid="uid://beoqdp18yive5"]
 
 [ext_resource type="Script" path="res://mob.gd" id="1_rski6"]
 [ext_resource type="Texture2D" uid="uid://b3efnjvsoe78k" path="res://images/customer2.png" id="2_tnlbr"]
 [ext_resource type="Texture2D" uid="uid://bgxtjkayof65g" path="res://images/Shadow.png" id="3_s8n3j"]
 [ext_resource type="Texture2D" uid="uid://drn1kf7lkr0e3" path="res://images/bubble_thought.png" id="4_1awi4"]
 [ext_resource type="PackedScene" uid="uid://b20yp6d1wkslj" path="res://scenes/random_images.tscn" id="5_mfvb2"]
+[ext_resource type="Texture2D" uid="uid://dw2u841eqs5ua" path="res://images/progress bar/back inner.png" id="7_g4nj5"]
+[ext_resource type="Texture2D" uid="uid://clvt7tthx2hal" path="res://images/progress bar/border2.png" id="7_pwma2"]
+[ext_resource type="Texture2D" uid="uid://dscx4kbmdg3dk" path="res://images/progress bar/inner.png" id="8_mb2pb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ven7"]
 atlas = ExtResource("2_tnlbr")
@@ -60,9 +63,15 @@ height = 65.1112
 
 [node name="mob" type="CharacterBody2D"]
 position = Vector2(-5, -10)
+scale = Vector2(0.906113, 0.918058)
 collision_layer = 3
 collision_mask = 9
 script = ExtResource("1_rski6")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(5, -25)
+scale = Vector2(5.33418, 4.77148)
+texture = ExtResource("3_s8n3j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(5.55556, -48.8889)
@@ -70,11 +79,6 @@ scale = Vector2(5.838, 6)
 sprite_frames = SubResource("SpriteFrames_d5jly")
 animation = &"running"
 frame_progress = 0.586856
-
-[node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]
-position = Vector2(0, 2.16667)
-scale = Vector2(0.9137, 0.795247)
-texture = ExtResource("3_s8n3j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, -33)
@@ -88,3 +92,15 @@ texture = ExtResource("4_1awi4")
 [node name="random_images" parent="BubbleThought" instance=ExtResource("5_mfvb2")]
 position = Vector2(-1.88642, -55.6164)
 scale = Vector2(1.08047, 0.775844)
+
+[node name="anger_meter" type="TextureProgressBar" parent="."]
+offset_left = -48.5591
+offset_top = -92.5867
+offset_right = -22.5591
+offset_bottom = 7.4133
+scale = Vector2(0.727032, 0.76096)
+max_value = 1000.0
+fill_mode = 3
+texture_under = ExtResource("7_g4nj5")
+texture_over = ExtResource("7_pwma2")
+texture_progress = ExtResource("8_mb2pb")

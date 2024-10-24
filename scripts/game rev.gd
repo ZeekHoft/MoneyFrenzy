@@ -1,7 +1,7 @@
 extends Node
 
 var score = 0
-var bank_revenue = 300
+var bank_revenue = 600
 
 @onready var lost_rev = %lost_rev
 @onready var game = $"../.."
@@ -9,6 +9,7 @@ var bank_revenue = 300
 @onready var bank_rev = %"bank rev"
 @onready var income = %income
 @onready var final_score = %final_score
+@onready var warning = %warning
 
 
 
@@ -47,5 +48,9 @@ func display():
 	if bank_revenue <= 0:
 		game._on_business_man_ruined_reputation()
 		GlobalVar.shoot = false
-	
+	if bank_revenue <= 300:
+		warning.visible = true
+	elif bank_revenue > 300:
+		warning.visible = false
+		
 	

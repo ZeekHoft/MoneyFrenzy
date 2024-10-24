@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://bp4j3wcw7gevi"]
+[gd_scene load_steps=15 format=3 uid="uid://bp4j3wcw7gevi"]
 
 [ext_resource type="Script" path="res://scripts/mob1.gd" id="1_xbjam"]
 [ext_resource type="Texture2D" uid="uid://b3efnjvsoe78k" path="res://images/customer2.png" id="2_85tit"]
 [ext_resource type="Texture2D" uid="uid://bgxtjkayof65g" path="res://images/Shadow.png" id="3_dggxp"]
 [ext_resource type="Texture2D" uid="uid://drn1kf7lkr0e3" path="res://images/bubble_thought.png" id="4_6ir4e"]
 [ext_resource type="PackedScene" uid="uid://b20yp6d1wkslj" path="res://scenes/random_images.tscn" id="5_i5mjt"]
+[ext_resource type="Texture2D" uid="uid://dw2u841eqs5ua" path="res://images/progress bar/back inner.png" id="6_sfyka"]
+[ext_resource type="Texture2D" uid="uid://clvt7tthx2hal" path="res://images/progress bar/border2.png" id="7_25hty"]
+[ext_resource type="Texture2D" uid="uid://dscx4kbmdg3dk" path="res://images/progress bar/inner.png" id="8_lt8ol"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67m02"]
 atlas = ExtResource("2_85tit")
@@ -64,17 +67,17 @@ collision_layer = 3
 collision_mask = 9
 script = ExtResource("1_xbjam")
 
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(5.64616, -15.3643)
+scale = Vector2(2.57024, 2.29906)
+texture = ExtResource("3_dggxp")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(6, -36)
 scale = Vector2(2.813, 2.891)
 sprite_frames = SubResource("SpriteFrames_d5jly")
 animation = &"running"
 frame_progress = 0.858971
-
-[node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]
-position = Vector2(0, 2.16667)
-scale = Vector2(0.9137, 0.795247)
-texture = ExtResource("3_dggxp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, -19)
@@ -88,3 +91,15 @@ texture = ExtResource("4_6ir4e")
 [node name="random_images" parent="BubbleThought" instance=ExtResource("5_i5mjt")]
 position = Vector2(-1.88642, -55.6164)
 scale = Vector2(1.08047, 0.775844)
+
+[node name="anger2_meter" type="TextureProgressBar" parent="."]
+offset_left = -23.019
+offset_top = -49.7081
+offset_right = 16.981
+offset_bottom = 50.2919
+scale = Vector2(0.282097, 0.390265)
+max_value = 1000.0
+fill_mode = 3
+texture_under = ExtResource("6_sfyka")
+texture_over = ExtResource("7_25hty")
+texture_progress = ExtResource("8_lt8ol")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dv1t2skyyb7jl"]
+[gd_scene load_steps=5 format=3 uid="uid://dv1t2skyyb7jl"]
 
 [ext_resource type="Script" path="res://scripts/items.gd" id="1_80qxh"]
 [ext_resource type="Texture2D" uid="uid://c2lll07lf0c1a" path="res://images/drop items/cash.png" id="1_b8fuk"]
+[ext_resource type="Texture2D" uid="uid://bgxtjkayof65g" path="res://images/Shadow.png" id="3_hni2s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hio6e"]
 radius = 21.3776
@@ -15,6 +16,11 @@ script = ExtResource("1_80qxh")
 position = Vector2(3, -30)
 scale = Vector2(0.10119, 0.10303)
 texture = ExtResource("1_b8fuk")
+
+[node name="Shadow" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-23.4708, 67.9414)
+scale = Vector2(43.0039, 24.5681)
+texture = ExtResource("3_hni2s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -28)

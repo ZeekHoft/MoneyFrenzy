@@ -6,7 +6,7 @@ var health = 1
 @onready var main = get_node("/root/Game")
 @onready var sfx_loanded = get_node("/root/Game/sfx_loanded")
 @onready var animated_sprite_2d = $AnimatedSprite2D
-
+@onready var anger_meter = $anger_meter
 var item_scene := preload("res://scenes/items.tscn")
 
 
@@ -18,19 +18,20 @@ var item_scene := preload("res://scenes/items.tscn")
 	
 	
 func _physics_process(_delta):
+	anger_meter.value = GlobalVar.mob_speed
+	print(anger_meter.value)
+	
+	
 	var mob_direction = global_position.direction_to(business_man.global_position)
 	velocity = mob_direction * GlobalVar.mob_speed
 	animated_sprite_2d.play("running")
 	move_and_slide()
-	
-
 	##speed over time need fix
 	#CycleCount += 1
 	#for i in CycleCount:
 		#if i % 1000 == 0:
 			#speed += 1
 	##print(speed)
-	
 	var player_direction = business_man.get_player_direction()
 	#global_position.x is the mob then the other one is the x position of the player
 	if global_position.x < business_man.global_position.x:
@@ -41,10 +42,14 @@ func _physics_process(_delta):
 		
 	if GlobalVar.business_reputation_health <= 0.0:
 			GlobalVar.mob_speed = 0
-		
+	
+	
+	
 		
 func take_damage():
 	health -= 1
+	GlobalVar.mob_speed += 10
+	
 	if health == 0:
 		sfx_loanded.playsfx()
 		queue_free()
