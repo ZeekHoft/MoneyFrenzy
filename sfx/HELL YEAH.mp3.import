@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dknv8rhc7kcsn"
+path="res://.godot/imported/HELL YEAH.mp3-5a5d7e60c0628d640cabc7e9e93956ce.mp3str"
+
+[deps]
+
+source_file="res://sfx/HELL YEAH.mp3"
+dest_files=["res://.godot/imported/HELL YEAH.mp3-5a5d7e60c0628d640cabc7e9e93956ce.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

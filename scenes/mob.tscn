@@ -65,7 +65,7 @@ height = 44.2149
 position = Vector2(-5, -10)
 scale = Vector2(0.906113, 0.918058)
 collision_layer = 3
-collision_mask = 27
+collision_mask = 11
 script = ExtResource("1_rski6")
 
 [node name="Shadow" type="Sprite2D" parent="."]
@@ -81,7 +81,7 @@ animation = &"running"
 frame_progress = 0.586856
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.62169, -39.2132)
+position = Vector2(3.31085, -16.3388)
 shape = SubResource("CapsuleShape2D_rdit1")
 
 [node name="BubbleThought" type="Sprite2D" parent="."]

@@ -18,7 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://dvcmw6gkonejk" path="res://sfx/cusomter_loanded2.mp3" id="14_nr5on"]
 [ext_resource type="Script" path="res://scripts/sfx_loanded.gd" id="15_f3mjs"]
 [ext_resource type="AudioStream" uid="uid://djxqjm5n87eis" path="res://sfx/hurt2.wav" id="17_84p87"]
-[ext_resource type="AudioStream" uid="uid://bb1t0cjl452m1" path="res://sfx/promotion sfx.MP3" id="18_twg0m"]
+[ext_resource type="AudioStream" uid="uid://dknv8rhc7kcsn" path="res://sfx/HELL YEAH.mp3" id="18_bofrn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kg722"]
 texture = ExtResource("3_qrumk")
@@ -567,6 +567,7 @@ theme_override_font_sizes/font_size = 40
 text = "Play Again?"
 
 [node name="sfx_bg" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("13_40ow8")
 volume_db = 15.0
 autoplay = true
@@ -588,8 +589,7 @@ pitch_scale = 1.24
 
 [node name="sfx_promotion" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("18_twg0m")
-volume_db = 4.0
+stream = ExtResource("18_bofrn")
 
 [node name="barrier" parent="." instance=ExtResource("3_2gf77")]
 position = Vector2(768, 62)

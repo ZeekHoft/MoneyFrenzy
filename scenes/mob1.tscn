@@ -53,7 +53,7 @@ height = 26.2508
 position = Vector2(-6, -2)
 scale = Vector2(2.30245, 2.21292)
 collision_layer = 3
-collision_mask = 27
+collision_mask = 11
 script = ExtResource("1_xbjam")
 
 [node name="Shadow" type="Sprite2D" parent="."]
@@ -68,7 +68,7 @@ sprite_frames = SubResource("SpriteFrames_5dcur")
 animation = &"running"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5.64616, -23.0465)
+position = Vector2(5.64616, -12.653)
 shape = SubResource("CapsuleShape2D_rdit1")
 
 [node name="BubbleThought" type="Sprite2D" parent="."]

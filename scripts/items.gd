@@ -18,7 +18,7 @@ var textures = [cash, credit, reputation]
 func _ready():
 	$Sprite2D.texture = textures[item_type]
 
-var heal = 20.0
+var heal = 10.0
 
 func add_health():
 	
