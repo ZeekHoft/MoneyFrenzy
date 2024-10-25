@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://5oh61jih13wc"]
+[gd_scene load_steps=28 format=3 uid="uid://5oh61jih13wc"]
 
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_php2n"]
 [ext_resource type="PackedScene" uid="uid://d87r4mywukd7" path="res://scenes/business_man.tscn" id="2_f6q2v"]
@@ -129,26 +129,6 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1cn3y"]
 
-[sub_resource type="Animation" id="Animation_bv7fe"]
-resource_name = "transition"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b04mc"]
-_data = {
-"transition": SubResource("Animation_bv7fe")
-}
-
 [sub_resource type="FontVariation" id="FontVariation_kbeyn"]
 base_font = ExtResource("8_vg7ry")
 
@@ -157,6 +137,7 @@ script = ExtResource("1_php2n")
 metadata/_edit_vertical_guides_ = [-160.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -34.0
 offset_right = 31.0
 offset_bottom = 52.0
@@ -233,8 +214,8 @@ position = Vector2(2067, 488)
 shape = SubResource("RectangleShape2D_yierd")
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(15.8999, 17.9923)
-scale = Vector2(0.988818, 0.925428)
+position = Vector2(15.8999, 38.9925)
+scale = Vector2(0.988818, 0.903369)
 curve = SubResource("Curve2D_q1rvc")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -296,7 +277,7 @@ theme_override_font_sizes/font_size = 40
 text = "Total Salary: 0 ₱ "
 
 [node name="Cash" type="Sprite2D" parent="score/game_rev/income"]
-position = Vector2(-23, 15)
+position = Vector2(-23, 27.5)
 scale = Vector2(0.0717579, 0.0708485)
 texture = ExtResource("11_ggk52")
 
@@ -318,8 +299,8 @@ theme_override_font_sizes/font_size = 40
 text = "Bank Loan: 6000 ₱"
 
 [node name="Credit" type="Sprite2D" parent="score/game_rev/bank rev"]
-position = Vector2(-23, 19)
-scale = Vector2(0.0636161, 0.0602679)
+position = Vector2(-26, 28.5)
+scale = Vector2(0.0761719, 0.0697545)
 texture = ExtResource("12_dv28e")
 
 [node name="Label" type="Label" parent="score/game_rev"]
@@ -355,8 +336,8 @@ max_value = 500.0
 value = 50.0
 
 [node name="Star3" type="Sprite2D" parent="score/revenue_bar/rev_bar"]
-position = Vector2(-361, 11)
-scale = Vector2(0.319, 0.332)
+position = Vector2(-358, 11)
+scale = Vector2(0.302357, 0.316)
 texture = ExtResource("11_fft3b")
 
 [node name="low_reputation" type="CanvasLayer" parent="."]
@@ -390,11 +371,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 62
 text = "Low Reputation!!!"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="low_reputation"]
-libraries = {
-"": SubResource("AnimationLibrary_b04mc")
-}
 
 [node name="warning" type="CanvasLayer" parent="."]
 unique_name_in_owner = true

@@ -20,7 +20,7 @@ var bank_revenue = 6000
 #the add and minus function are on cash
 
 func add_rev():
-	score += 2000
+	score += 4000
 	display()
 
 

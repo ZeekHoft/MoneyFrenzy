@@ -1,11 +1,12 @@
-res://item scenes/chair.tscn
 res://scenes/game.tscn
 res://scenes/business_man.tscn
 res://scenes/items.tscn
 res://scenes/document.tscn
 res://scenes/cash.tscn
+res://item scenes/chair.tscn
 res://scenes/barrier.tscn
 res://scenes/mob.tscn
 res://scenes/mob1.tscn
 res://scenes/mob_2.tscn
 res://scenes/low_incom.tscn
+res://scripts/items.gd

@@ -59,7 +59,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdit1"]
 radius = 17.6667
-height = 65.1112
+height = 44.2149
 
 [node name="mob" type="CharacterBody2D"]
 position = Vector2(-5, -10)
@@ -81,7 +81,7 @@ animation = &"running"
 frame_progress = 0.586856
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, -33)
+position = Vector2(6.62169, -39.2132)
 shape = SubResource("CapsuleShape2D_rdit1")
 
 [node name="BubbleThought" type="Sprite2D" parent="."]
