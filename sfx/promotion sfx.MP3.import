@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb1t0cjl452m1"
+path="res://.godot/imported/promotion sfx.MP3-e306f00ba5525a1daa4e9f5bcf020019.mp3str"
+
+[deps]
+
+source_file="res://sfx/promotion sfx.MP3"
+dest_files=["res://.godot/imported/promotion sfx.MP3-e306f00ba5525a1daa4e9f5bcf020019.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

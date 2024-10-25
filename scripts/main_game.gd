@@ -15,9 +15,12 @@ extends Node2D
 
 
 
+
+	
+
+
 func spawn_mob2():
-	mob_3.wait_time = 10
-	#print("spawn3")
+	print("spawn3")
 	
 	var new_mob2 = preload("res://scenes/mob_2.tscn").instantiate()
 	path_follow_2d.progress_ratio = randf()
@@ -26,8 +29,7 @@ func spawn_mob2():
 	
 
 func spawn_mob1():
-	mob_2.wait_time = 5
-	#print("spawn2")
+	print("spawn2")
 
 	var new_mob1 = preload("res://scenes/mob1.tscn").instantiate()
 	path_follow_2d.progress_ratio = randf()

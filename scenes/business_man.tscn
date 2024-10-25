@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://d87r4mywukd7"]
+[gd_scene load_steps=29 format=3 uid="uid://d87r4mywukd7"]
 
 [ext_resource type="Script" path="res://scripts/business_man.gd" id="1_cm7y0"]
 [ext_resource type="Texture2D" uid="uid://b72hwi366h8aq" path="res://images/business_man.png" id="1_lw8bc"]
 [ext_resource type="Texture2D" uid="uid://bgxtjkayof65g" path="res://images/Shadow.png" id="2_mifeh"]
 [ext_resource type="PackedScene" uid="uid://dv7x0ioycxvah" path="res://scenes/document.tscn" id="4_wjqe4"]
+[ext_resource type="PackedScene" uid="uid://c4xixxoswptn7" path="res://scenes/promotion.tscn" id="5_me5vl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1u72x"]
 atlas = ExtResource("1_lw8bc")
@@ -192,6 +193,9 @@ shape = SubResource("CapsuleShape2D_87ulo")
 
 [node name="Money" parent="." instance=ExtResource("4_wjqe4")]
 position = Vector2(8, -50)
+
+[node name="promotion" parent="." instance=ExtResource("5_me5vl")]
+position = Vector2(7.49998, -51.25)
 
 [node name="reputation_box" type="Area2D" parent="."]
 unique_name_in_owner = true

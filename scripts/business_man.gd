@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var low_reputation = get_node("/root/Game/low_reputation")
 @onready var sfx_dmg = get_node("/root/Game/sfx_dmg")
 @onready var money = $Money
+@onready var promotion = $promotion
 
 
 @export var random_shake_strength: float = 20.0
@@ -38,15 +39,23 @@ func add_something():
 	loanded.global_position = global_position
 
 func _physics_process(delta):
-	if GlobalVar.business_reputation_health < 50:
+	if GlobalVar.business_reputation_health < 100:
 		low_reputation.visible = true
 		
-	if GlobalVar.business_reputation_health > 50:
+	if GlobalVar.business_reputation_health > 100:
 		low_reputation.visible = false
 	
 	
+	if GlobalVar.score >= GlobalVar.promotion_score:
+		GlobalVar.promote = true
+		promotion.visible = true
+
+	if GlobalVar.score < GlobalVar.promotion_score:
+		GlobalVar.promote = false
+		promotion.visible = false
 	
-			
+		
+		
 	player_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = player_direction * GlobalVar.business_man_speed
 	#print(GlobalVar.business_man_speed)

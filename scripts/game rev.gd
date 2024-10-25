@@ -12,7 +12,8 @@ var bank_revenue = 10000
 @onready var final_score = %final_score
 @onready var warning = %warning
 @onready var gameover_label = %gameover_label
-@onready var low_reputation = %low_reputation
+@onready var promotion = %promotion
+@onready var sfx_promotion = %sfx_promotion
 
 
 
@@ -61,9 +62,16 @@ func display():
 
 	if GlobalVar.business_reputation_health <= 0:
 		gameover_label.visible = true
+		
+	
+	if GlobalVar.score >= GlobalVar.promotion_score:
+		promotion.visible = true
+		
+		
+	if GlobalVar.score < GlobalVar.promotion_score:
+		promotion.visible = false
 	
 
-		
 	
 	
 	

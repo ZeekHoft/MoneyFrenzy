@@ -49,6 +49,12 @@ func _physics_process(_delta):
 func take_damage():
 	health -= 1
 	GlobalVar.mob_speed += 5
+	sfx_loanded.playsfx()
+	const LOANDED1 = preload("res://scenes/loanded.tscn")
+	var loanded1 = LOANDED1.instantiate()
+	get_parent().add_child(loanded1)
+	
+	loanded1.global_position = global_position
 	
 	if health == 0:
 		sfx_loanded.playsfx()

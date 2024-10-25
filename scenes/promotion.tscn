@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4xixxoswptn7"]
+
+[ext_resource type="Script" path="res://scripts/promotion.gd" id="1_ssjkq"]
+[ext_resource type="Texture2D" uid="uid://bywskdpqk66it" path="res://images/promotion.png" id="2_d7hxu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1y21"]
+radius = 182.525
+
+[node name="promotion" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_ssjkq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 6)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_w1y21")
+
+[node name="pivotDocument" type="Marker2D" parent="."]
+
+[node name="Promotion" type="Sprite2D" parent="pivotDocument"]
+position = Vector2(71, 19)
+scale = Vector2(0.155039, 0.177536)
+texture = ExtResource("2_d7hxu")
+
+[node name="throwMoney" type="Marker2D" parent="pivotDocument/Promotion"]
+unique_name_in_owner = true
+position = Vector2(-45.1499, 39.4287)
+scale = Vector2(3.24711, 3.57309)
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
