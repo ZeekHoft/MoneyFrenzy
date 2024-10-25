@@ -7,4 +7,4 @@ var mob_speed = 100
 var mob1_speed = 100
 var mob2_speed = 100
 var shoot = true
-
+var score = 0

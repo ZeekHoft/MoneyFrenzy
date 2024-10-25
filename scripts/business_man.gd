@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var camera = get_node("/root/Game/businessMan/Camera2D")
 @onready var low_reputation = get_node("/root/Game/low_reputation")
 @onready var sfx_dmg = get_node("/root/Game/sfx_dmg")
+@onready var money = $Money
 
 
 @export var random_shake_strength: float = 20.0
@@ -30,18 +31,25 @@ func randomOffset() -> Vector2:
 	return Vector2(rng.randf_range(-shake_strength, shake_strength),rng.randf_range(-shake_strength, shake_strength))
 
 
-
+func add_something():
+	const LOANDED = preload("res://scenes/document.tscn")
+	var loanded = LOANDED.instantiate()
+	get_parent().call_deferred("add_child", loanded)
+	loanded.global_position = global_position
 
 func _physics_process(delta):
 	if GlobalVar.business_reputation_health < 50:
 		low_reputation.visible = true
+		
 	if GlobalVar.business_reputation_health > 50:
 		low_reputation.visible = false
+	
+	
 	
 			
 	player_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = player_direction * GlobalVar.business_man_speed
-	print(GlobalVar.business_man_speed)
+	#print(GlobalVar.business_man_speed)
 	move_and_slide()
 	
 	

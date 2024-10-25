@@ -296,7 +296,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Bank Loan: 6000 ₱"
+text = "Bank Loan: 10000 ₱"
 
 [node name="Credit" type="Sprite2D" parent="score/game_rev/bank rev"]
 position = Vector2(-26, 28.5)
@@ -472,13 +472,13 @@ unique_name_in_owner = true
 layout_mode = 0
 offset_left = 224.0
 offset_top = 280.0
-offset_right = 451.0
+offset_right = 558.0
 offset_bottom = 320.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Total Salary: 0"
+text = "Total Salary: 0 ₱"
 
 [node name="lost_rev" type="Label" parent="gameover/ColorRect2/Control"]
 unique_name_in_owner = true
@@ -498,7 +498,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Bank Loan: 6000"
+text = "Bank Loan: 10000 ₱"
 
 [node name="final_score" type="Label" parent="gameover/ColorRect2/Control"]
 unique_name_in_owner = true
@@ -511,7 +511,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Final Profit: 0"
+text = "Final Profit: 0 ₱"
 
 [node name="resume" type="Button" parent="gameover/ColorRect2/Control"]
 unique_name_in_owner = true

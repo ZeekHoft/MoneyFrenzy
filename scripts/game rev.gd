@@ -1,7 +1,7 @@
 extends Node
 
 var score = 0
-var bank_revenue = 6000
+var bank_revenue = 10000
 @onready var rev_bar = %rev_bar
 
 @onready var lost_rev = %lost_rev
@@ -20,13 +20,13 @@ var bank_revenue = 6000
 #the add and minus function are on cash
 
 func add_rev():
-	score += 4000
+	GlobalVar.score += 4000
 	display()
 
 
 func minus_rev():
 	#score -= 100
-	score -= 1000
+	GlobalVar.score -= 1000
 	bank_revenue -= 1000
 	display()
 	
@@ -41,18 +41,19 @@ func regain_revenue():
 
 func display():
 	
-	var finalScore_convert = score + bank_revenue 
+	var finalScore_convert = GlobalVar.score + bank_revenue 
 	var finaScore_converted = str(finalScore_convert)
-	income.text = "Total Salary: " + str(score) + "₱"
+	income.text = "Total Salary: " + str(GlobalVar.score) + "₱"
 	lost_rev.text = "Bank Loan: " + str(bank_revenue) + "₱"
 	bank_rev.text = "Bank Loan: " + str(bank_revenue) + "₱"
-	score_display.text = "Total Salary: " + str(score) + "₱"
+	score_display.text = "Total Salary: " + str(GlobalVar.score) + "₱"
 	final_score.text = "Final Profit:" + str(finaScore_converted) + "₱"
 	
 	if bank_revenue <= 0:
 		game._on_business_man_ruined_reputation()
 		GlobalVar.shoot = false
 		gameover_label.visible = true
+
 	if bank_revenue <= 3000:
 		warning.visible = true
 	elif bank_revenue > 3000:

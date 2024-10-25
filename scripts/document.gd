@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var audio_stream_player = $AudioStreamPlayer
+
 @onready var throw_money = %throwMoney
 
 

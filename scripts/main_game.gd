@@ -62,6 +62,7 @@ func _on_business_man_ruined_reputation():
 	gameover.visible = true
 	resume.visible = false
 	#GlobalVar.shoot = false
+	GlobalVar.score = 0
 	GlobalVar.business_man_speed = 0
 	GlobalVar.mob_speed = 0
 	GlobalVar.mob1_speed = 0
