@@ -2,43 +2,43 @@
 
 [ext_resource type="Script" path="res://scripts/mob_2.gd" id="1_ocm6d"]
 [ext_resource type="Texture2D" uid="uid://bgxtjkayof65g" path="res://images/Shadow.png" id="2_1btvy"]
-[ext_resource type="Texture2D" uid="uid://cgap4f15odmbb" path="res://images/free-office-pixel-art/Julia_walk_Rigth.png" id="3_w61d4"]
+[ext_resource type="Texture2D" uid="uid://52kujsyqgti1" path="res://images/customer3.png" id="3_s2nm5"]
 [ext_resource type="Texture2D" uid="uid://drn1kf7lkr0e3" path="res://images/bubble_thought.png" id="4_scxxw"]
 [ext_resource type="PackedScene" uid="uid://b20yp6d1wkslj" path="res://scenes/random_images.tscn" id="5_e3frt"]
 [ext_resource type="Texture2D" uid="uid://dw2u841eqs5ua" path="res://images/progress bar/back inner.png" id="6_q1mo2"]
 [ext_resource type="Texture2D" uid="uid://clvt7tthx2hal" path="res://images/progress bar/border2.png" id="7_ogdtv"]
 [ext_resource type="Texture2D" uid="uid://dscx4kbmdg3dk" path="res://images/progress bar/inner.png" id="8_xuf78"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4hdiy"]
-atlas = ExtResource("3_w61d4")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bekg"]
+atlas = ExtResource("3_s2nm5")
+region = Rect2(0, 152, 32, 38)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3gkyb"]
-atlas = ExtResource("3_w61d4")
-region = Rect2(64, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf73t"]
+atlas = ExtResource("3_s2nm5")
+region = Rect2(32, 152, 32, 38)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ci6l"]
-atlas = ExtResource("3_w61d4")
-region = Rect2(128, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fk0c"]
+atlas = ExtResource("3_s2nm5")
+region = Rect2(64, 152, 32, 38)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_inlv3"]
-atlas = ExtResource("3_w61d4")
-region = Rect2(192, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn7kq"]
+atlas = ExtResource("3_s2nm5")
+region = Rect2(96, 152, 32, 38)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d5jly"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4hdiy")
+"texture": SubResource("AtlasTexture_7bekg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3gkyb")
+"texture": SubResource("AtlasTexture_cf73t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2ci6l")
+"texture": SubResource("AtlasTexture_2fk0c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_inlv3")
+"texture": SubResource("AtlasTexture_rn7kq")
 }],
 "loop": true,
 "name": &"running",
@@ -60,8 +60,8 @@ scale = Vector2(2.57024, 2.29906)
 texture = ExtResource("2_1btvy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(6.94912, -21.6908)
-scale = Vector2(1.41081, 1.41489)
+position = Vector2(8.6864, -37.9589)
+scale = Vector2(2.64241, 3.14056)
 sprite_frames = SubResource("SpriteFrames_d5jly")
 animation = &"running"
 frame_progress = 0.858971
@@ -71,7 +71,7 @@ position = Vector2(6, -19)
 shape = SubResource("CapsuleShape2D_rdit1")
 
 [node name="BubbleThought" type="Sprite2D" parent="."]
-position = Vector2(33.4426, -46.5448)
+position = Vector2(34.3113, -57.3902)
 scale = Vector2(0.234646, 0.352487)
 texture = ExtResource("4_scxxw")
 

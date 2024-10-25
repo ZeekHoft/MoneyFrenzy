@@ -65,7 +65,7 @@ height = 65.1112
 position = Vector2(-5, -10)
 scale = Vector2(0.906113, 0.918058)
 collision_layer = 3
-collision_mask = 11
+collision_mask = 27
 script = ExtResource("1_rski6")
 
 [node name="Shadow" type="Sprite2D" parent="."]
@@ -104,3 +104,9 @@ fill_mode = 3
 texture_under = ExtResource("7_g4nj5")
 texture_over = ExtResource("7_pwma2")
 texture_progress = ExtResource("8_mb2pb")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
