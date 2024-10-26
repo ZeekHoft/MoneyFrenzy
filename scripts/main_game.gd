@@ -11,6 +11,7 @@ extends Node2D
 @onready var gameover = %gameover
 @onready var gameover_label = %gameover_label
 @onready var resume_button = %resume_button
+@onready var pause = %pause
 
 
 
@@ -48,7 +49,6 @@ func spawn_mob():
 
 
 func _on_timer_timeout():
-	
 	spawn_mob()
 	
 func _on_mob_2_timeout():
@@ -61,24 +61,12 @@ func _on_mob_3_timeout():
 
 
 func _on_business_man_ruined_reputation():
-	gameover.visible = true
-	resume_button.visible = false
-	#GlobalVar.shoot = false
-	GlobalVar.score = 0
-	GlobalVar.bank_revenue = GlobalVar.bank_revenue
-	GlobalVar.business_man_speed = 0
-	GlobalVar.mob_speed = 0
-	GlobalVar.mob1_speed = 0
-	GlobalVar.mob2_speed = 0
-	mob.stop()
-	mob_2.stop()
-	mob_3.stop()
+	pause.pause_game()
 
 
 
-	
 
-#func _on_retart_pressed():
+#func _on_restart_pressed():
 	#get_tree().reload_current_scene()
 	#GlobalVar.shoot = true
 	#GlobalVar.business_man_speed = 300
@@ -119,3 +107,9 @@ func _on_business_man_ruined_reputation():
 
 
 	
+
+
+
+
+
+

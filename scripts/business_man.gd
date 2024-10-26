@@ -41,10 +41,9 @@ func add_something():
 	loanded.global_position = global_position
 
 func _physics_process(delta):
-	if GlobalVar.business_reputation_health < 100:
+	if GlobalVar.business_reputation_health < 50:
 		low_reputation.visible = true
-		
-	if GlobalVar.business_reputation_health > 100:
+	if GlobalVar.business_reputation_health > 50:
 		low_reputation.visible = false
 	
 	
