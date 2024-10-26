@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://5oh61jih13wc"]
+[gd_scene load_steps=30 format=3 uid="uid://5oh61jih13wc"]
 
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_php2n"]
 [ext_resource type="PackedScene" uid="uid://d87r4mywukd7" path="res://scenes/business_man.tscn" id="2_f6q2v"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ldrri486q4jn" path="res://images/Office tiles/carpet2.png" id="3_4my3t"]
 [ext_resource type="Texture2D" uid="uid://bv7lq2pfj8kvn" path="res://images/Office tiles/walls.png" id="3_7vov4"]
 [ext_resource type="Texture2D" uid="uid://dafxbtx7jevip" path="res://images/Office tiles/carpet.png" id="3_qrumk"]
+[ext_resource type="Script" path="res://scenes/pause.gd" id="7_x6b7a"]
 [ext_resource type="FontFile" uid="uid://wlqf2n0u7ft7" path="res://fonts/neon_pixel-7.ttf" id="8_vg7ry"]
 [ext_resource type="Texture2D" uid="uid://dxqbbheoqx7yx" path="res://images/the lOAN LEGACY.png" id="11_8k6vw"]
 [ext_resource type="Texture2D" uid="uid://tc244p4bconf" path="res://images/star3.png" id="11_fft3b"]
@@ -240,13 +241,16 @@ autostart = true
 [node name="score" type="CanvasLayer" parent="."]
 
 [node name="pause" type="Button" parent="score"]
+process_mode = 3
 visible = false
-offset_left = 1088.0
-offset_top = 20.0
-offset_right = 1141.0
-offset_bottom = 66.0
+offset_left = 1090.0
+offset_top = 11.0
+offset_right = 1143.0
+offset_bottom = 57.0
 theme_override_font_sizes/font_size = 22
 text = "II"
+script = ExtResource("7_x6b7a")
+metadata/_edit_use_anchors_ = true
 
 [node name="game_rev" type="Control" parent="score"]
 unique_name_in_owner = true
@@ -427,8 +431,8 @@ offset_bottom = 212.0
 theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
-theme_override_font_sizes/font_size = 36
-text = "get 50% missed loans"
+theme_override_font_sizes/font_size = 64
+text = "PROMOTED!!!"
 
 [node name="gameover" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -540,8 +544,9 @@ theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
 text = "Final Profit: 20000 ₱"
 
-[node name="resume" type="Button" parent="gameover/ColorRect2/Control"]
+[node name="resume_button" type="Button" parent="gameover/ColorRect2/Control"]
 unique_name_in_owner = true
+process_mode = 3
 visible = false
 layout_mode = 0
 offset_left = 477.0
@@ -555,7 +560,9 @@ theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
 text = "Reusme"
 
-[node name="retart" type="Button" parent="gameover/ColorRect2/Control"]
+[node name="restart" type="Button" parent="gameover/ColorRect2/Control"]
+unique_name_in_owner = true
+process_mode = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -632,6 +639,6 @@ text = "Safe Area"
 [connection signal="timeout" from="mob" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="mob2" to="." method="_on_mob_2_timeout"]
 [connection signal="timeout" from="mob3" to="." method="_on_mob_3_timeout"]
-[connection signal="pressed" from="score/pause" to="." method="_on_pause_pressed"]
-[connection signal="pressed" from="gameover/ColorRect2/Control/resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="gameover/ColorRect2/Control/retart" to="." method="_on_retart_pressed"]
+[connection signal="pressed" from="score/pause" to="score/pause" method="_on_pressed"]
+[connection signal="pressed" from="gameover/ColorRect2/Control/resume_button" to="score/pause" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="gameover/ColorRect2/Control/restart" to="score/pause" method="_on_restart_pressed"]

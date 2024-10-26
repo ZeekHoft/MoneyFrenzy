@@ -8,9 +8,9 @@ extends Node2D
 @onready var mob_3 = %mob3
 @onready var path_2d = $Path2D
 @onready var path_follow_2d = %PathFollow2D
-@onready var resume = %resume
 @onready var gameover = %gameover
 @onready var gameover_label = %gameover_label
+@onready var resume_button = %resume_button
 
 
 
@@ -62,7 +62,7 @@ func _on_mob_3_timeout():
 
 func _on_business_man_ruined_reputation():
 	gameover.visible = true
-	resume.visible = false
+	resume_button.visible = false
 	#GlobalVar.shoot = false
 	GlobalVar.score = 0
 	GlobalVar.bank_revenue = GlobalVar.bank_revenue
@@ -76,53 +76,46 @@ func _on_business_man_ruined_reputation():
 
 
 
+	
 
-func _on_retart_pressed():
-	get_tree().reload_current_scene()
-	GlobalVar.shoot = true
-	GlobalVar.business_man_speed = 300
-	GlobalVar.mob_speed = 100
-	GlobalVar.mob1_speed = 100
-	GlobalVar.mob2_speed = 100
-	GlobalVar.bank_revenue = 20000
-	GlobalVar.business_reputation_health = GlobalVar.reset_value
-	mob.autostart = true
-	mob_2.autostart = true
-	mob_3.autostart = true
+#func _on_retart_pressed():
+	#get_tree().reload_current_scene()
+	#GlobalVar.shoot = true
+	#GlobalVar.business_man_speed = 300
+	#GlobalVar.mob_speed = 100
+	#GlobalVar.mob1_speed = 100
+	#GlobalVar.mob2_speed = 100
+	#GlobalVar.bank_revenue = 20000
+	#GlobalVar.business_reputation_health = GlobalVar.reset_value
+	#mob.autostart = true
+	#mob_2.autostart = true
+	#mob_3.autostart = true
 
 
 
-func _process(_delta):
-	if Input.is_action_just_pressed("pause"):
-		_on_business_man_ruined_reputation()
-		GlobalVar.shoot = false
-		resume.visible = true
-		gameover_label.visible = false
-		mob.stop()
-		mob_2.stop()
-		mob_3.stop()
-	elif  Input.is_action_just_pressed("resume"):
-		_on_resume_pressed()
+#func _process(_delta):
+	#if Input.is_action_just_pressed("pause"):
+		#gameover.visible = true
+		#resume.visible = false
+		#GlobalVar.business_man_speed = GlobalVar.mob_and_player_stop
+		#GlobalVar.mob_speed = GlobalVar.mob_and_player_stop
+		#GlobalVar.mob1_speed = GlobalVar.mob_and_player_stop
+		#GlobalVar.mob2_speed = GlobalVar.mob_and_player_stop
+		#GlobalVar.shoot = false
+		#resume.visible = true
+		#gameover_label.visible = false
+		#mob.stop()
+		#mob_2.stop()
+		#mob_3.stop()
+	#elif  Input.is_action_just_pressed("resume"):
+		#_on_resume_pressed()
 
-func _on_pause_pressed():
-	_on_business_man_ruined_reputation()
-	gameover_label.visible = false
-	GlobalVar.shoot = false
-	resume.visible = true
-	mob.stop()
-	mob_2.stop()
-	mob_3.stop()
+
+
+
+
 	
 
 
-func _on_resume_pressed():
-	gameover.visible = false
-	GlobalVar.shoot = true
-	mob.start()
-	mob_2.start()
-	mob_3.start()
-	GlobalVar.business_man_speed = 300
-	GlobalVar.mob_speed = 100
-	GlobalVar.mob1_speed = 100
-	GlobalVar.mob2_speed = 100
-	GlobalVar.business_reputation_health = GlobalVar.business_reputation_health
+
+	

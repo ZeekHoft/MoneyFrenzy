@@ -25,6 +25,7 @@ func add_health():
 	GlobalVar.business_reputation_health = min(GlobalVar.business_reputation_health + heal, 500.0)
 	bar_revenue.value = GlobalVar.business_reputation_health
 	GlobalVar.business_man_speed += 10
+	print(GlobalVar.business_man_speed)
 	
 	
 
