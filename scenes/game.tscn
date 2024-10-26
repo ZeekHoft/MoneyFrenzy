@@ -138,7 +138,6 @@ script = ExtResource("1_php2n")
 metadata/_edit_vertical_guides_ = [-160.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 offset_left = -34.0
 offset_right = 31.0
 offset_bottom = 52.0
@@ -299,7 +298,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Bank Loan: 10000 ₱"
+text = "Bank Loan: 20000 ₱"
 
 [node name="Credit" type="Sprite2D" parent="score/game_rev/bank rev"]
 position = Vector2(-26, 28.5)
@@ -316,7 +315,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Businee Reputation:"
+text = "Business Reputation:"
 
 [node name="revenue_bar" type="Control" parent="score"]
 unique_name_in_owner = true
@@ -516,7 +515,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Bank Loan: 10000 ₱"
+text = "Bank Loan: 20000 ₱"
 
 [node name="final_score" type="Label" parent="gameover/ColorRect2/Control"]
 unique_name_in_owner = true

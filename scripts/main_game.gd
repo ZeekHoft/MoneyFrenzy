@@ -65,7 +65,7 @@ func _on_business_man_ruined_reputation():
 	resume.visible = false
 	#GlobalVar.shoot = false
 	GlobalVar.score = 0
-	GlobalVar.bank_revenue = 10000
+	GlobalVar.bank_revenue = 20000
 	GlobalVar.business_man_speed = 0
 	GlobalVar.mob_speed = 0
 	GlobalVar.mob1_speed = 0

@@ -85,6 +85,8 @@ GlobalVar="*res://scripts/global_var.gd"
 
 [display]
 
+window/size/viewport_height=623
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [dotnet]
