@@ -23,13 +23,17 @@ func add_rev():
 	GlobalVar.score += 4000
 	display()
 
+func minus_salary():
+	GlobalVar.score -= 10
+	display()
 
 func minus_rev():
-	#score -= 100
-	GlobalVar.score -= 1000
 	GlobalVar.bank_revenue -= 1000
 	display()
-	
+
+func minus_rev_promotion():
+	GlobalVar.bank_revenue -= 250
+	display()
 
 func regain_revenue():
 	GlobalVar.bank_revenue += 3000
@@ -41,7 +45,8 @@ func regain_revenue():
 
 func display():
 	
-	var finalScore_convert = GlobalVar.score + GlobalVar.bank_revenue 
+	var finalScore_convert = GlobalVar.score + GlobalVar.bank_revenue
+
 	var finaScore_converted = str(finalScore_convert)
 	income.text = "Total Salary: " + str(GlobalVar.score) + " ₱"
 	lost_rev.text = "Bank Loan: " + str(GlobalVar.bank_revenue) + " ₱"

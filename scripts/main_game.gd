@@ -20,7 +20,7 @@ extends Node2D
 
 
 func spawn_mob2():
-	print("spawn3")
+	#print("spawn3")
 	
 	var new_mob2 = preload("res://scenes/mob_2.tscn").instantiate()
 	path_follow_2d.progress_ratio = randf()
@@ -29,7 +29,7 @@ func spawn_mob2():
 	
 
 func spawn_mob1():
-	print("spawn2")
+	#print("spawn2")
 
 	var new_mob1 = preload("res://scenes/mob1.tscn").instantiate()
 	path_follow_2d.progress_ratio = randf()
@@ -65,7 +65,7 @@ func _on_business_man_ruined_reputation():
 	resume.visible = false
 	#GlobalVar.shoot = false
 	GlobalVar.score = 0
-	GlobalVar.bank_revenue = 20000
+	GlobalVar.bank_revenue = GlobalVar.bank_revenue
 	GlobalVar.business_man_speed = 0
 	GlobalVar.mob_speed = 0
 	GlobalVar.mob1_speed = 0
@@ -84,6 +84,7 @@ func _on_retart_pressed():
 	GlobalVar.mob_speed = 100
 	GlobalVar.mob1_speed = 100
 	GlobalVar.mob2_speed = 100
+	GlobalVar.bank_revenue = 20000
 	GlobalVar.business_reputation_health = GlobalVar.reset_value
 	mob.autostart = true
 	mob_2.autostart = true

@@ -24,7 +24,8 @@ func _input(event):
 		if GlobalVar.promote == true:
 			shoot()
 		if GlobalVar.promote == false:
-			print("no promote")
+			#print("no promote")
+			pass
 	
 
 

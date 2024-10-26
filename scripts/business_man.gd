@@ -7,6 +7,8 @@ extends CharacterBody2D
 @onready var camera = get_node("/root/Game/businessMan/Camera2D")
 @onready var low_reputation = get_node("/root/Game/low_reputation")
 @onready var sfx_dmg = get_node("/root/Game/sfx_dmg")
+@onready var cash_minus = get_node("/root/Game/score/game_rev")
+
 @onready var money = $Money
 @onready var promotion = $promotion
 
@@ -84,7 +86,7 @@ func _physics_process(delta):
 	if overlapping_mobs.size() > 0:
 		sfx_dmg.play()
 		GlobalVar.business_reputation_health -= DAMAGE_REP * overlapping_mobs.size() * delta
-		
+		cash_minus.minus_salary()
 		bar_revenue.value = GlobalVar.business_reputation_health
 		apply_shake()
 		

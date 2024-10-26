@@ -36,7 +36,7 @@ func shoot():
 	
 
 func _input(event):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT or Input.is_action_just_pressed("shoot_money"):
 		if GlobalVar.shoot == true:
 			shoot()
 		if GlobalVar.shoot == false:

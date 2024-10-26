@@ -3,7 +3,7 @@ extends Area2D
 
 @onready var cash = get_node("/root/Game/score/game_rev")
 @onready var sfx_dmg = get_node("/root/Game/sfx_dmg")
-
+@onready var promotion = get_node("/root/Game/businessMan/promotion")
 
 var travelled_distance = 0
 func _physics_process(delta):
@@ -23,6 +23,10 @@ func _physics_process(delta):
 		const LOW_INCOME = preload("res://scenes/low_incom.tscn")
 		var low_income = LOW_INCOME.instantiate()
 		get_parent().add_child(low_income)
+	if travelled_distance > RANGE and GlobalVar.score >= GlobalVar.promotion_score:
+		GlobalVar.promote = true
+		promotion.visible = true
+		cash.minus_rev_promotion()
 
 
 func _on_body_entered(body):
@@ -32,8 +36,6 @@ func _on_body_entered(body):
 		body.take_damage()
 		
 		
-		
-		
-		
-	
+
+
 

@@ -327,18 +327,18 @@ offset_bottom = 40.0
 [node name="rev_bar" type="ProgressBar" parent="score/revenue_bar"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 401.0
-offset_top = 20.0
-offset_right = 639.0
-offset_bottom = 48.0
+offset_left = 409.0
+offset_top = 8.0
+offset_right = 647.0
+offset_bottom = 36.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_styles/fill = SubResource("StyleBoxFlat_b7avl")
-max_value = 1000.0
+max_value = 500.0
 value = 100.0
 
 [node name="Star3" type="Sprite2D" parent="score/revenue_bar/rev_bar"]
-position = Vector2(-358, 11)
+position = Vector2(-370, 11)
 scale = Vector2(0.302357, 0.316)
 texture = ExtResource("11_fft3b")
 
@@ -362,17 +362,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -247.0
-offset_top = -144.0
-offset_right = 200.0
-offset_bottom = -81.0
+offset_left = -204.0
+offset_top = 126.5
+offset_right = 243.0
+offset_bottom = 189.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
-theme_override_font_sizes/font_size = 62
-text = "Low Reputation!!!"
+theme_override_font_sizes/font_size = 36
+text = "low reputation collect: "
+
+[node name="Star3" type="Sprite2D" parent="low_reputation/Label"]
+position = Vector2(375, 15.5)
+scale = Vector2(0.344643, 0.398214)
+texture = ExtResource("11_fft3b")
 
 [node name="warning" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -393,17 +398,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -205.0
-offset_top = -68.0
-offset_right = 164.0
-offset_bottom = -5.0
+offset_left = -176.0
+offset_top = 185.5
+offset_right = 193.0
+offset_bottom = 248.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
-theme_override_font_sizes/font_size = 62
-text = "Low on loan!!!"
+theme_override_font_sizes/font_size = 36
+text = "Low on loan collect"
+
+[node name="Credit" type="Sprite2D" parent="warning/Label"]
+position = Vector2(326, 20)
+scale = Vector2(0.0786831, 0.078404)
+texture = ExtResource("12_dv28e")
 
 [node name="promotion" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -417,8 +427,8 @@ offset_bottom = 212.0
 theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
-theme_override_font_sizes/font_size = 62
-text = "PROMOTED!!!"
+theme_override_font_sizes/font_size = 36
+text = "get 50% missed loans"
 
 [node name="gameover" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -528,7 +538,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
-text = "Final Profit: 0 ₱"
+text = "Final Profit: 20000 ₱"
 
 [node name="resume" type="Button" parent="gameover/ColorRect2/Control"]
 unique_name_in_owner = true
@@ -538,7 +548,7 @@ offset_left = 477.0
 offset_top = 494.0
 offset_right = 680.0
 offset_bottom = 544.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
@@ -558,7 +568,7 @@ offset_right = 661.0
 offset_bottom = 469.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.513726, 0.509804, 0.513726, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
