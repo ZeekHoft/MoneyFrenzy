@@ -61,7 +61,7 @@ func _on_mob_3_timeout():
 
 
 func _on_business_man_ruined_reputation():
-	pause.pause_game()
+	pause.bankrupt()
 
 
 

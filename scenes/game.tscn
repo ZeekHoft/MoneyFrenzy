@@ -243,7 +243,6 @@ autostart = true
 [node name="pause" type="Button" parent="score"]
 unique_name_in_owner = true
 process_mode = 3
-visible = false
 offset_left = 1090.0
 offset_top = 11.0
 offset_right = 1143.0

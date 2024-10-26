@@ -17,6 +17,13 @@ func pause_game():
 	get_tree().paused = true
 
 
+func bankrupt():
+	isPaused = true
+	gameover.visible = true
+	resume_button.visible = false
+	GlobalVar.shoot = false
+	get_tree().paused = true
+
 func resume_game():
 	isPaused = false
 	gameover.visible = false
@@ -42,6 +49,7 @@ func _on_restart_pressed():
 	resume_game()
 	get_tree().reload_current_scene()
 	GlobalVar.shoot = true
+	
 	GlobalVar.business_man_speed = 300
 	GlobalVar.mob_speed = 100
 	GlobalVar.mob1_speed = 100
