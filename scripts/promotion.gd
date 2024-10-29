@@ -27,5 +27,3 @@ func _input(event):
 			#print("no promote")
 			pass
 	
-
-

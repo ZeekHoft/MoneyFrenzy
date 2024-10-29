@@ -67,5 +67,3 @@ func drop_item():
 	item.add_to_group("items")
 	
 	
-
-

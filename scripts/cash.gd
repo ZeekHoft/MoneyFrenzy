@@ -33,6 +33,3 @@ func _on_body_entered(body):
 		body.take_damage()
 		
 		
-
-
-

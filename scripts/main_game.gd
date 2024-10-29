@@ -107,9 +107,3 @@ func _on_business_man_ruined_reputation():
 
 
 	
-
-
-
-
-
-

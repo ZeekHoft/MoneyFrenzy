@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://50n13xb3cxq7"]
+
+[ext_resource type="Texture2D" uid="uid://bu5x7yuqrsdbv" path="res://images/frame.png" id="1_d0vt5"]
+[ext_resource type="Script" path="res://scripts/joystick.gd" id="2_hhxqg"]
+[ext_resource type="Texture2D" uid="uid://bd87nb306mr24" path="res://images/coin.png" id="2_t486k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a46cu"]
+radius = 450.0
+
+[node name="joystick" type="TouchScreenButton"]
+position = Vector2(4.99998, 2)
+scale = Vector2(0.325924, 0.342249)
+texture_normal = ExtResource("1_d0vt5")
+shape = SubResource("CircleShape2D_a46cu")
+script = ExtResource("2_hhxqg")
+
+[node name="Coin" type="Sprite2D" parent="."]
+position = Vector2(500.116, 517.167)
+texture = ExtResource("2_t486k")

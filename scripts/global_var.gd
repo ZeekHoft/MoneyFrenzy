@@ -14,7 +14,6 @@ var business_reputation_health = 100.0
 var reset_value = 100.0
 var score = 0
 var bank_revenue = 20000
-var promotion_score = 10000
+var promotion_score = 40000
 
 var mob_and_player_stop = 0
-

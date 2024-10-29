@@ -11,6 +11,7 @@ extends CharacterBody2D
 
 @onready var money = $Money
 @onready var promotion = $promotion
+@onready var joystick: TouchScreenButton = $"../mobile controls/joystick"
 
 
 @export var random_shake_strength: float = 20.0
@@ -46,7 +47,6 @@ func _physics_process(delta):
 	if GlobalVar.business_reputation_health > 50:
 		low_reputation.visible = false
 	
-	
 	if GlobalVar.score >= GlobalVar.promotion_score:
 		GlobalVar.promote = true
 		promotion.visible = true
@@ -55,8 +55,8 @@ func _physics_process(delta):
 		GlobalVar.promote = false
 		promotion.visible = false
 	
-		
-		
+	
+	
 	player_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = player_direction * GlobalVar.business_man_speed
 	#print(GlobalVar.business_man_speed)
@@ -74,6 +74,13 @@ func _physics_process(delta):
 		animated_sprite_2d.flip_h = true
 	
 	
+	var screen_direction = joystick.get_joystick_dir()
+	velocity = screen_direction * GlobalVar.business_man_speed
+	move_and_slide()
+	
+	
+	
+	
 	if shake_strength > 0:
 		shake_strength = lerpf(shake_strength, 0, shake_fade * delta)
 		camera.offset = randomOffset()
@@ -89,8 +96,6 @@ func _physics_process(delta):
 		bar_revenue.value = GlobalVar.business_reputation_health
 		apply_shake()
 		
-		
-		
 		#print(GlobalVar.business_reputation_health)
 		#print("helth222222222: " + str(business_reputation_health))
 		const STEAL_INCOME = preload("res://scenes/minus_reputation.tscn")
@@ -98,8 +103,6 @@ func _physics_process(delta):
 		var steal_income= STEAL_INCOME.instantiate()
 		add_child(steal_income)
 		
-
-			
 		if GlobalVar.business_reputation_health <= 0.0:
 			ruined_reputation.emit()
 			GlobalVar.business_man_speed = 0
@@ -115,7 +118,3 @@ func get_player_direction():
 #func get_health():
 	#return business_reputation_health
 	#print(business_reputation_health)
-
-
-
-

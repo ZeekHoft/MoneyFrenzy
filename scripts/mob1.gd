@@ -82,4 +82,3 @@ func drop_item():
 #
 #func _on_laonded_sfx_1_finished():
 	#queue_free()
-

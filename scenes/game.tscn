@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://5oh61jih13wc"]
+[gd_scene load_steps=32 format=4 uid="uid://5oh61jih13wc"]
 
 [ext_resource type="Script" path="res://scripts/main_game.gd" id="1_php2n"]
 [ext_resource type="PackedScene" uid="uid://d87r4mywukd7" path="res://scenes/business_man.tscn" id="2_f6q2v"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dafxbtx7jevip" path="res://images/Office tiles/carpet.png" id="3_qrumk"]
 [ext_resource type="Script" path="res://scenes/pause.gd" id="7_x6b7a"]
 [ext_resource type="FontFile" uid="uid://wlqf2n0u7ft7" path="res://fonts/neon_pixel-7.ttf" id="8_vg7ry"]
+[ext_resource type="PackedScene" uid="uid://50n13xb3cxq7" path="res://scenes/joystick.tscn" id="8_xk5mw"]
+[ext_resource type="Script" path="res://scripts/shoot_loan.gd" id="9_i4leu"]
 [ext_resource type="Texture2D" uid="uid://dxqbbheoqx7yx" path="res://images/the lOAN LEGACY.png" id="11_8k6vw"]
 [ext_resource type="Texture2D" uid="uid://tc244p4bconf" path="res://images/star3.png" id="11_fft3b"]
 [ext_resource type="Texture2D" uid="uid://c2lll07lf0c1a" path="res://images/drop items/cash.png" id="11_ggk52"]
@@ -145,10 +147,12 @@ offset_bottom = 52.0
 scale = Vector2(33.2294, 19.4901)
 color = Color(0.534102, 0.478217, 0.384935, 1)
 
-[node name="walls" type="TileMap" parent="."]
+[node name="walls" type="Node2D" parent="."]
+
+[node name="walls" type="TileMapLayer" parent="walls"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAP7/AQADAAkAAAABAP7/AQADAAkAAAACAP7/AQADAAkAAAADAP7/AQADAAkAAAAEAP7/AQADAAkAAAAFAP7/AQADAAkAAAAGAP7/AQADAAkAAAAHAP7/AQADAAkAAAAIAP7/AQADAAkAAAAJAP7/AQADAAkAAAAKAP7/AQADAAkAAAALAP7/AQADAAkAAAAMAP7/AQADAAkAAAANAP7/AQADAAkAAAAOAP7/AQADAAkAAAAPAP7/AQADAAkAAAAQAP7/AQADAAkAAAARAP7/AQADAAkAAAASAP7/AQADAAkAAAATAP7/AQADAAkAAAAUAP7/AQADAAkAAAAVAP7/AQADAAkAAAAWAP7/AQADAAkAAAAXAP7/AQADAAkAAAAYAP7/AQADAAkAAAAZAP7/AQADAAkAAAAaAP7/AQADAAkAAAAbAP7/AQADAAkAAAAcAP7/AQADAAkAAAAdAP7/AQADAAkAAAAeAP7/AQADAAkAAAAfAP7/AQADAAkAAAAgAP7/AQADAAkAAAAhAP7/AQADAAkAAAAiAP7/AQADAAkAAAAjAP7/AQADAAkAAAAkAP7/AQADAAkAAAAlAP7/AQADAAkAAAAmAP7/AQADAAkAAAAnAP7/AQADAAkAAAAoAP7/AQADAAkAAAAoADsAAQADAAkAAAAnADsAAQADAAkAAAAmADsAAQADAAkAAAAlADsAAQADAAkAAAAkADsAAQADAAkAAAAjADsAAQADAAkAAAAiADsAAQADAAkAAAAhADsAAQADAAkAAAAgADsAAQADAAkAAAAfADsAAQADAAkAAAAeADsAAQADAAkAAAAdADsAAQADAAkAAAAcADsAAQADAAkAAAAbADsAAQADAAkAAAAaADsAAQADAAkAAAAZADsAAQADAAkAAAAYADsAAQADAAkAAAAXADsAAQADAAkAAAAWADsAAQADAAkAAAAVADsAAQADAAkAAAAUADsAAQADAAkAAAATADsAAQADAAkAAAASADsAAQADAAkAAAARADsAAQADAAkAAAAQADsAAQADAAkAAAAPADsAAQADAAkAAAAOADsAAQADAAkAAAANADsAAQADAAkAAAAMADsAAQADAAkAAAALADsAAQADAAkAAAAKADsAAQADAAkAAAAJADsAAQADAAkAAAAIADsAAQADAAkAAAAHADsAAQADAAkAAAAGADsAAQADAAkAAAAFADsAAQADAAkAAAAEADsAAQADAAkAAAADADsAAQADAAkAAAACADsAAQADAAkAAAABADsAAQADAAkAAAAAADsAAQADAAkAAAD//zsAAQADAAkAAAD//zcAAQACAAoAADD//zEAAQACAAoAADD//ysAAQACAAoAADD//yUAAQACAAoAADD//x8AAQACAAoAADD//xkAAQACAAoAADD//xMAAQACAAoAADD//w0AAQACAAoAADD//wcAAQACAAoAADD//wEAAQACAAoAADD///7/AQADAAkAAAAoAAAAAQACAAoAAAAoAAYAAQACAAoAAAAoAAwAAQACAAoAAAAoABIAAQACAAoAAAAoABgAAQACAAoAAAAoAB4AAQACAAoAAAAoACQAAQACAAoAAAAoACoAAQACAAoAAAAoADAAAQACAAoAAAAoADYAAQACAAoAAAA=")
 tile_set = SubResource("TileSet_g5mrb")
-format = 2
-layer_0/tile_data = PackedInt32Array(-131072, 196609, 9, -131071, 196609, 9, -131070, 196609, 9, -131069, 196609, 9, -131068, 196609, 9, -131067, 196609, 9, -131066, 196609, 9, -131065, 196609, 9, -131064, 196609, 9, -131063, 196609, 9, -131062, 196609, 9, -131061, 196609, 9, -131060, 196609, 9, -131059, 196609, 9, -131058, 196609, 9, -131057, 196609, 9, -131056, 196609, 9, -131055, 196609, 9, -131054, 196609, 9, -131053, 196609, 9, -131052, 196609, 9, -131051, 196609, 9, -131050, 196609, 9, -131049, 196609, 9, -131048, 196609, 9, -131047, 196609, 9, -131046, 196609, 9, -131045, 196609, 9, -131044, 196609, 9, -131043, 196609, 9, -131042, 196609, 9, -131041, 196609, 9, -131040, 196609, 9, -131039, 196609, 9, -131038, 196609, 9, -131037, 196609, 9, -131036, 196609, 9, -131035, 196609, 9, -131034, 196609, 9, -131033, 196609, 9, -131032, 196609, 9, 3866664, 196609, 9, 3866663, 196609, 9, 3866662, 196609, 9, 3866661, 196609, 9, 3866660, 196609, 9, 3866659, 196609, 9, 3866658, 196609, 9, 3866657, 196609, 9, 3866656, 196609, 9, 3866655, 196609, 9, 3866654, 196609, 9, 3866653, 196609, 9, 3866652, 196609, 9, 3866651, 196609, 9, 3866650, 196609, 9, 3866649, 196609, 9, 3866648, 196609, 9, 3866647, 196609, 9, 3866646, 196609, 9, 3866645, 196609, 9, 3866644, 196609, 9, 3866643, 196609, 9, 3866642, 196609, 9, 3866641, 196609, 9, 3866640, 196609, 9, 3866639, 196609, 9, 3866638, 196609, 9, 3866637, 196609, 9, 3866636, 196609, 9, 3866635, 196609, 9, 3866634, 196609, 9, 3866633, 196609, 9, 3866632, 196609, 9, 3866631, 196609, 9, 3866630, 196609, 9, 3866629, 196609, 9, 3866628, 196609, 9, 3866627, 196609, 9, 3866626, 196609, 9, 3866625, 196609, 9, 3866624, 196609, 9, 3932159, 196609, 9, 3670015, 131073, 805306378, 3276799, 131073, 805306378, 2883583, 131073, 805306378, 2490367, 131073, 805306378, 2097151, 131073, 805306378, 1703935, 131073, 805306378, 1310719, 131073, 805306378, 917503, 131073, 805306378, 524287, 131073, 805306378, 131071, 131073, 805306378, -65537, 196609, 9, 40, 131073, 10, 393256, 131073, 10, 786472, 131073, 10, 1179688, 131073, 10, 1572904, 131073, 10, 1966120, 131073, 10, 2359336, 131073, 10, 2752552, 131073, 10, 3145768, 131073, 10, 3538984, 131073, 10)
 
 [node name="flooring" type="Node2D" parent="."]
 
@@ -238,9 +242,9 @@ unique_name_in_owner = true
 wait_time = 10.0
 autostart = true
 
-[node name="score" type="CanvasLayer" parent="."]
+[node name="mobile controls" type="CanvasLayer" parent="."]
 
-[node name="pause" type="Button" parent="score"]
+[node name="pause" type="Button" parent="mobile controls"]
 unique_name_in_owner = true
 process_mode = 3
 offset_left = 1090.0
@@ -248,9 +252,24 @@ offset_top = 11.0
 offset_right = 1143.0
 offset_bottom = 57.0
 theme_override_font_sizes/font_size = 22
-text = "II"
+text = "ll "
 script = ExtResource("7_x6b7a")
 metadata/_edit_use_anchors_ = true
+
+[node name="joystick" parent="mobile controls" instance=ExtResource("8_xk5mw")]
+position = Vector2(27, 418)
+scale = Vector2(0.203, 0.204)
+
+[node name="shoot_loan" type="Button" parent="mobile controls"]
+offset_left = 985.0
+offset_top = 529.0
+offset_right = 1120.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 28
+text = "LOAN"
+script = ExtResource("9_i4leu")
+
+[node name="score" type="CanvasLayer" parent="."]
 
 [node name="game_rev" type="Control" parent="score"]
 unique_name_in_owner = true
@@ -553,9 +572,9 @@ offset_left = 477.0
 offset_top = 494.0
 offset_right = 680.0
 offset_bottom = 544.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.513726, 0.509804, 0.513726, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
 text = "Reusme"
@@ -575,9 +594,9 @@ offset_right = 661.0
 offset_bottom = 469.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.513726, 0.509804, 0.513726, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_vg7ry")
 theme_override_font_sizes/font_size = 40
 text = "Play Again?"
@@ -639,6 +658,7 @@ text = "Safe Area"
 [connection signal="timeout" from="mob" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="mob2" to="." method="_on_mob_2_timeout"]
 [connection signal="timeout" from="mob3" to="." method="_on_mob_3_timeout"]
-[connection signal="pressed" from="score/pause" to="score/pause" method="_on_pressed"]
-[connection signal="pressed" from="gameover/ColorRect2/Control/resume_button" to="score/pause" method="_on_resume_button_pressed"]
-[connection signal="pressed" from="gameover/ColorRect2/Control/restart" to="score/pause" method="_on_restart_pressed"]
+[connection signal="pressed" from="mobile controls/pause" to="mobile controls/pause" method="_on_pressed"]
+[connection signal="pressed" from="mobile controls/shoot_loan" to="mobile controls/shoot_loan" method="_on_pressed"]
+[connection signal="pressed" from="gameover/ColorRect2/Control/resume_button" to="mobile controls/pause" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="gameover/ColorRect2/Control/restart" to="mobile controls/pause" method="_on_restart_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn80eu1qs371v"
-path="res://.godot/imported/circle.png-a2fa3270dee1c1c7e1cb0869903e82df.ctex"
+uid="uid://bd87nb306mr24"
+path="res://.godot/imported/coin.png-15fe16fa581dc6c449233894dd9c0e34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pistol/impact/circle.png"
-dest_files=["res://.godot/imported/circle.png-a2fa3270dee1c1c7e1cb0869903e82df.ctex"]
+source_file="res://images/coin.png"
+dest_files=["res://.godot/imported/coin.png-15fe16fa581dc6c449233894dd9c0e34.ctex"]
 
 [params]
 
